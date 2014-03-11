@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{#Need to show list so that items can be listed, edited, or deleted #}
+{% block title %}Your Pantry {% endblock %}
+
+{% block main %}
+<div class="header"><h3>Add ingredients to your pantry</h3></div>
+<form method="post">
+    {% csrf_token  %}
+    Ingredient: {{ form.ing_user }}<br>
+    Optional: Quantity: {{ form.quantity }}<br>
+    Optional: Purchase Date: {{ form.purch_date }} <br>
+    <input type="submit" value="Add Ingredient" />
+
+</form>
+{% endblock %}

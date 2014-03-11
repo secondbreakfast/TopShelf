@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<form method="post">
+{#    Wraps each form item in a p tag. Or you can loop over every field in the form. Or add errors. #}
+    {% csrf_token  %}
+         {{ form.as_p }}
+    <input type="submit" value="Sign in" />
+
+</form>
+</body>
+</html>

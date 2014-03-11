@@ -1,0 +1,17 @@
+    goodFood = {}
+    # match = recipes
+    for item in recipes['matches']:
+        recipe_ing = item['ingredients']
+        if not set(recipe_ing) - set(ingred):
+            name = item['recipeName']
+            recipe_id = item['id']
+            source = item['sourceDisplayName']
+            img = item['smallImageUrls']
+            goodFood[name].id = recipe_id
+            goodFood[name].source = source
+            goodFood[name].img = img
+            print goodFood
+        # else:
+        #     match = "Not a match!"
+        data = {"match": goodFood}
+        return render(request, "recipe.html", data)
