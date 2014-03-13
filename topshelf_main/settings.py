@@ -61,7 +61,7 @@ WSGI_APPLICATION = 'topshelf_main.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'topshelf',
+        'NAME': 'topshelf_1',
         'USER': 'root',
         'PASSWORD': 'Lola',
         'HOST': '127.0.0.1',

@@ -71,8 +71,16 @@ def pantry(request, user_id):
 #Change this later to show which ingredients the user is missing.
 def recipe(request, user_id):
     # print date.now()
-    ingred = UserIngred.objects.get(id=user_id)
-    # print ingred
+    user_ingred = []
+    user_test = UserIngred.objects.filter(user=request.user)
+    for item in user_test:
+        user_ingred.append(item.ing_master)
+    #     {% for food in match %}
+    #     {{ food.ing_master }}
+    # {% endfor %}
+
+    # for item in whatever:
+    #     user_ingred
     # # ingred = ["tomatoes", "kale", "fresh lemon juice", "large garlic cloves", "unsalted butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
     # recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&allowedIngredient[]=garlic&allowedIngredient[]=mushroom&maxResult=10')
     # recipes = recipes.json()
@@ -94,31 +102,12 @@ def recipe(request, user_id):
     #     # else:
     #     #     match = "Not a match!"
     #     data = {"match": goodFood}
-    data = {"match": ingred}
+
+    data = {"match": user_test}
     return render(request, "recipe.html", data)
     # data = {"match": match}
     # return render(request, "recipe.html", data)
 
-
-# recipes = {}
-#
-# ing = ['egg','flour','sugar','salt','cheese','baking soda']
-# recipes['bread'] = ['flour','sugar']
-# recipes['beer'] = ['alcohol','sugar']
-#
-# def canCook(ing,recipes):
-#         goodFood = []
-#         badFood ={}
-#         for i in recipes:
-#                 if not set(recipes[i]) - set(ing):
-#                         goodFood.append(i)
-#                 else:
-#                         badFood[i] = set(recipes[i]) - set(ing)
-#         print('You can cook: %r' % (goodFood))
-#         for i in badFood:
-#                 print('You cannot cook %s, you are missing %r' % (i,badFood[i]))
-#
-# canCook(ing,recipes)
 
 def favorites(request):
     data = {"hi": "Your favorite recipes"}

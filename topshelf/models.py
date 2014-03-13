@@ -9,8 +9,11 @@ class IngredMaster(models.Model):
     def __unicode__(self):
         return self.ing
 
+    def __repr__(self):
+        return self.ing
+
 class UserIngred(models.Model):
-    ing_user = models.ManyToManyField(IngredMaster)
+    ing_master = models.ForeignKey(IngredMaster)
     # May need to add quantity, purchasedate, to intermediary table
     quantity = models.FloatField(null=True, blank=True)
     #Use default value for data entry?
