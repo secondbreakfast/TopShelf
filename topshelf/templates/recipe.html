@@ -3,6 +3,15 @@
 {% block title %}Recipes{% endblock %}
 
 {% block main %}
-{{ match }}
+    {% for stuff in match %}
+    <ul>{{ stuff.recipeName }}
+    <li>{{ stuff.sourceDisplayName }}</li>
+    <li>{{ stuff.id }}</li>
+    <img src="{{ stuff.smallImageUrls }}"/>
+    </ul>
+    {% endfor %}
+
+
+{#{{ match }}#}
 
 {% endblock %}

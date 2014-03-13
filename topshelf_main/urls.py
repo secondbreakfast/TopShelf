@@ -7,9 +7,10 @@ from topshelf.api.resources import UserIngredResource
 
 admin.autodiscover()
 
-# v1_api = Api(api_name="v1")
-# v1_api.register(UserIngredResource())
+v1_api = Api(api_name="v1")
+v1_api.register(UserIngredResource())
 
+# Url's for authentication and accounts
 urlpatterns = patterns('',
     url(r'^$', 'topshelf.views.index', name='index'),
     
@@ -26,22 +27,21 @@ urlpatterns = patterns('',
     url(r'^accounts/password/reset/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
                 auth_views.password_reset_confirm,
                 name='password_reset_confirm'),
-
     url(r'accounts/', include('registration.backends.default.urls')),
 
-#Add recipe detail page.
-#     url(r'^pantry/', 'topshelf.views.pantry', name='pantry'),
+# For main site pages
     url(r'^(?P<user_id>\w+)/pantry/$', 'topshelf.views.pantry', name='pantry'),
     url(r'^(?P<user_id>\w+)/recipe/$', 'topshelf.views.recipe', name='recipe'),
+    url(r'^(?P<user_id>\w+)/detail/$', 'topshelf.views.recipe_detail', name='recipe_detail'),
     # url(r'^favorite/', 'topshelf.views.favorite', name='favorite'),
 
-    # url(r'^api/', include(v1_api.urls)),
+# For API
+    url(r'^api/', include(v1_api.urls)),
+    url(r'api/lecture/doc/',
+        include('tastypie_swagger.urls', namespace='tastypie_swagger'),
+        kwargs={"tastypie_api_module": "v1_api",
+                "namespace": "lecture_tastypie_swagger"}
+    ),
 
     url(r'^admin/', include(admin.site.urls)),
-
-    # url(r'api/lecture/doc/',
-    #     include('tastypie_swagger.urls', namespace='tastypie_swagger'),
-    #     kwargs={"tastypie_api_module": "v1_api",
-    #             "namespace": "lecture_tastypie_swagger"}
-    # ),
 )

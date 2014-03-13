@@ -9,8 +9,8 @@ class IngredMaster(models.Model):
     def __unicode__(self):
         return self.ing
 
-    def __repr__(self):
-        return self.ing
+    # def __repr__(self):
+    #     return self.ing
 
 class UserIngred(models.Model):
     ing_master = models.ForeignKey(IngredMaster)

@@ -1,0 +1,20 @@
+{# May turn this into a template in Angular, so it doesn't need a separate page. #}
+
+{% extends "base.html" %}
+
+{% block title %}Recipe Detail{% endblock %}
+
+{% block main %}
+<div>
+<img src="{{ match.images.0.hostedLargeUrl }}">
+<h4>{{ match.name }}</h4>
+<p>Yummly user rating: {{ match.rating }}/5</p>
+<p>Total cook time: {{ match.totalTime }}</p>
+<p>Serves: {{ match.numberOfServings }}</p>
+Ingredients: {% for ingredient in match.ingredientLines %}
+                <p>{{ ingredient }}</p>
+             {% endfor %}
+From: <a href="{{ match.source.sourceRecipeUrl }}"> {{ match.source.sourceDisplayName }}</a>
+</div>
+
+{% endblock %}
