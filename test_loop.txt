@@ -1,17 +1,32 @@
-    goodFood = {}
-    # match = recipes
-    for item in recipes['matches']:
-        recipe_ing = item['ingredients']
-        if not set(recipe_ing) - set(ingred):
-            name = item['recipeName']
-            recipe_id = item['id']
-            source = item['sourceDisplayName']
-            img = item['smallImageUrls']
-            goodFood[name].id = recipe_id
-            goodFood[name].source = source
-            goodFood[name].img = img
-            print goodFood
-        # else:
-        #     match = "Not a match!"
-        data = {"match": goodFood}
-        return render(request, "recipe.html", data)
+    #ingred = []
+    #user_test = UserIngred.objects.filter(user=request.user)
+    #for item in user_test:
+    #    ingred.append(item.ing_master)
+    #     {% for food in match %}
+    #     {{ food.ing_master }}
+    # {% endfor %}
+
+    # # ingred = ["tomatoes", "kale", "fresh lemon juice", "large garlic cloves", "unsalted butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
+    # recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&allowedIngredient[]=garlic&allowedIngredient[]=mushroom&maxResult=10')
+    # recipes = recipes.json()
+    #
+    # #make results a dictionary to feed to homepage.
+    # goodFood = {}
+    # for item in recipes['matches']:
+    #     # match = item['ingredients']
+    #     recipe_ing = item['ingredients']
+    #     if not set(recipe_ing) - set(ingred):
+    #         name = item['recipeName']
+    #         recipe_id = item['id']
+    #         source = item['sourceDisplayName']
+    #         img = item['smallImageUrls']
+    #         goodFood[name] = {}
+    #         goodFood[name]['recipe_id'] = recipe_id
+    #         goodFood[name]['source'] = source
+    #         goodFood[name]['img'] = img
+    #     # else:
+    #     #     match = "Not a match!"
+    #     data = {"match": goodFood}
+
+    #data = {"match": ingred}
+    #return render(request, "recipe.html", data)

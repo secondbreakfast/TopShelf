@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'south',
     'topshelf',
     'registration',
+    'tastypie',
+    'tastypie_swagger',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -83,14 +85,16 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = '/static/'
-
 # DELETE THIS!!! And use a fake email for this.
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 # EMAIL_HOST_USER = 'ADD EMAIL HERE'
 # EMAIL_HOST_PASSWORD = 'ADD PASSWORD HERE'
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+TASTYPIE_SWAGGER_API_MODULE = "tastypie_tutorial.urls.v1_api"
+
+TASTYPIE_FULL_DEBUG = True
