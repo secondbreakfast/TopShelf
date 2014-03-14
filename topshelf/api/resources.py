@@ -7,22 +7,22 @@ from tastypie.resources import ModelResource, Resource
 from topshelf.models import IngredMaster, UserIngred, UserRecipe
 
 # Limit post, delete, etc to only the admin?
-class BareIngredientResource(ModelResource):
+class MasterIngredientResource(ModelResource):
     class Meta:
         queryset = IngredMaster.objects.all()
-        resource_name = "master_ingredient"
+        resource_name = "all_ingredients"
         authorization = Authorization()
 
 class UserIngredResource(ModelResource):
-    ingred = ToManyField(BareIngredientResource, "ing_master", null=True)
+    ing_master= ToOneField(MasterIngredientResource, "ing_master", full=True)
 
     class Meta:
         queryset = UserIngred.objects.all()
-        resource_name = "user_ingredient"
+        resource_name = "pantry"
         authorization = Authorization()
 
 class UserRecipeResource(ModelResource):
-    ingred = ToManyField(BareIngredientResource, "ingred", null=True)
+    ingred = ToManyField(MasterIngredientResource, "ingred", null=True)
 
     class Meta:
         queryset = UserRecipe.objects.all()

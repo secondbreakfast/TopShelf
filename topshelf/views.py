@@ -11,9 +11,6 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 from topshelf.forms import SignupForm, LoginForm
-
-
-
 from topshelf.models import UserIngred
 
 
@@ -36,6 +33,9 @@ def signup(request):
 
 
 #Initialized login page, authenticates, and redirects to pantry. Maybe make a user dashboard?
+def angular(request):
+    return render(request, 'angular.html')
+
 def login_page(request):
     if request.method =="POST":
         form = LoginForm(request.POST)
@@ -50,8 +50,8 @@ def login_page(request):
     data = {"form": form}
     return render(request, "signup.html", data)
 
-def logout_page(request):
-    logout(request)
+# def logout_page(request):
+#     logout(request)
 
 
 #Activate this when we want login to work. Need to link it to a user profile.

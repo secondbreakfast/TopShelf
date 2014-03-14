@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "angular.html" %}
 
 {% block title %}Recipes{% endblock %}
 
@@ -7,7 +7,7 @@
     <ul>{{ stuff.recipeName }}
     <li>{{ stuff.sourceDisplayName }}</li>
     <li>{{ stuff.id }}</li>
-    <img src="{{ stuff.smallImageUrls }}"/>
+    <img src="{{ stuff.smallImageUrls.0 }}"/>
     </ul>
     {% endfor %}
 

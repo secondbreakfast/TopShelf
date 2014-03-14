@@ -1,10 +1,13 @@
-{% extends "base.html" %}
+
+{% load staticfiles %}
+{% extends "angular.html" %}
 
 {#Need to show list so that items can be listed, edited, or deleted #}
 {% block title %}Your Pantry {% endblock %}
 
 {% block main %}
 <div class="header"><h3>Add ingredients to your pantry</h3></div>
+
 <form method="post">
     {% csrf_token  %}
     Ingredient: {{ form.ing_master }}<br>

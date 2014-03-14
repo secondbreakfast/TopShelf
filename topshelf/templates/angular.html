@@ -1,0 +1,52 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+    <title>{% block title %}TopShelf{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+{#    Jquery    #}
+    <script type="text/javascript"  src="{% static 'js/vendor/jquery-1.11.0.min.js' %}"></script>
+
+{#    Angular   #}
+    <script type="text/javascript"  src="{% static 'js/vendor/angular.js' %}"></script>
+    <script type="text/javascript"  src="{% static 'js/vendor/angular-route.js' %}"></script>
+    <script type="text/javascript"  src="{% static 'js/vendor/angular-resource.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/controllers/pantry.js' %}"></script>
+</head>
+
+<body>
+    <div id="header">
+        {% block header %}
+	<a href="{% url 'index' %}">{% trans "Home" %}</a> |
+
+	{% if user.is_authenticated %}
+	{% trans "Logged in" %}: {{ user.username }}
+	(<a href="{% url 'logout' %}">{% trans "Log out" %}</a> |
+	<a href="{% url 'password_change' %}">{% trans "Change password" %}</a>)
+	{% else %}
+	<a href="{% url 'login' %}">{% trans "Log in" %}</a>
+	{% endif %}
+	<hr />
+        {% endblock %}
+    </div>
+
+    <div id="main">
+        {% block main %}
+        <div ng-app="topshelf">
+            <div ng-view></div>
+</div>{% endblock %}
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+        <hr />
+        {% endblock %}
+    </div>
+</body>
+
+</html>

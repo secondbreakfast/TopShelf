@@ -3,12 +3,14 @@ from django.contrib.auth import views as auth_views
 
 from django.contrib import admin
 from tastypie.api import Api
-from topshelf.api.resources import UserIngredResource
+from topshelf.api.resources import UserIngredResource, UserRecipeResource, MasterIngredientResource
 
 admin.autodiscover()
 
 v1_api = Api(api_name="v1")
+v1_api.register(MasterIngredientResource())
 v1_api.register(UserIngredResource())
+v1_api.register(UserRecipeResource())
 
 # Url's for authentication and accounts
 urlpatterns = patterns('',
@@ -16,7 +18,7 @@ urlpatterns = patterns('',
     
     url(r'^signup/', 'topshelf.views.signup', name="signup"),
     url(r'^accounts/login/', 'topshelf.views.login_page', name="login"),
-    url(r'^accounts/logout/', 'topshelf.views.logout_page', name="logout"),
+    # url(r'^accounts/logout/', 'topshelf.views.logout_page', name="logout"),
     url(r'^accounts/password/change/$', auth_views.password_change, name='password_change'),
     url(r'^accounts/password/change/done/$', auth_views.password_change_done, name='password_change_done'),
     url(r'^accounts/password/reset/$', auth_views.password_reset,
@@ -30,13 +32,14 @@ urlpatterns = patterns('',
     url(r'accounts/', include('registration.backends.default.urls')),
 
 # For main site pages
-    url(r'^(?P<user_id>\w+)/pantry/$', 'topshelf.views.pantry', name='pantry'),
+#     url(r'^(?P<user_id>\w+)/pantry/$', 'topshelf.views.pantry', name='pantry'),
     url(r'^(?P<user_id>\w+)/recipe/$', 'topshelf.views.recipe', name='recipe'),
     url(r'^(?P<user_id>\w+)/detail/$', 'topshelf.views.recipe_detail', name='recipe_detail'),
     # url(r'^favorite/', 'topshelf.views.favorite', name='favorite'),
 
-# For API
+# For API and Angular
     url(r'^api/', include(v1_api.urls)),
+    url(r'^app/', 'topshelf.views.angular', name="angular"),
     url(r'api/lecture/doc/',
         include('tastypie_swagger.urls', namespace='tastypie_swagger'),
         kwargs={"tastypie_api_module": "v1_api",
