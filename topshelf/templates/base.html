@@ -5,7 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-    <title>{% block title %}User test{% endblock %}</title>
+    <title>{% block title %}TopShelf{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/autocomplete.css' %}">
+
+    <script type="text/javascript"  src="{% static 'js/vendor/jquery-1.11.0.min.js' %}"></script>
+
+{#    Angular   #}
+    <script type="text/javascript"  src="{% static 'js/vendor/angular.js' %}"></script>
+    <script type="text/javascript"  src="{% static 'js/vendor/angular-route.js' %}"></script>
+    <script type="text/javascript"  src="{% static 'js/vendor/angular-resource.js' %}"></script>
+
+{#    <script type="text/javascript" src="{% static 'js/autocomplete.js' %}"></script>#}
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js" ></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
 </head>
 
 <body>
@@ -15,17 +30,27 @@
 
 	{% if user.is_authenticated %}
 	{% trans "Logged in" %}: {{ user.username }}
-	(<a href="{% url 'logout' %}">{% trans "Log out" %}</a> |
-	<a href="{% url 'password_change' %}">{% trans "Change password" %}</a>)
+	(<a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a> |
+	<a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a>)
 	{% else %}
-	<a href="{% url 'login' %}">{% trans "Log in" %}</a>
+	<a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>
 	{% endif %}
 	<hr />
         {% endblock %}
     </div>
 
     <div id="main">
-        {% block main %}{% endblock %}
+        {% block main %}
+        Test
+        <div ng-app="plunker">
+        <div class='container-fluid' ng-controller="TypeaheadCtrl">
+            <h4>Static arrays</h4>
+{#            <pre>Model: {{selected | json}}</pre>#}
+            <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+        </div>
+        </div>
+
+        {% endblock %}
     </div>
 
     <div id="footer">

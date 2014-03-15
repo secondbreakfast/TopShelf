@@ -1,6 +1,5 @@
 from django.forms import ModelForm, DateField
 from topshelf.models import IngredMaster, UserIngred
-from django.contrib.admin import widgets
 
 __author__ = 'zhila'
 # Note: for user auth, you do not need to create a model to store the data.

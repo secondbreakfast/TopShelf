@@ -6,11 +6,14 @@ from topshelf.forms import IngredForm
 # Add about page?
 # Need to enable login
 
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 from topshelf.forms import SignupForm, LoginForm
+
+
+
 from topshelf.models import UserIngred
 
 
@@ -34,7 +37,7 @@ def signup(request):
 
 #Initialized login page, authenticates, and redirects to pantry. Maybe make a user dashboard?
 def angular(request):
-    return render(request, 'angular.html')
+    return render(request, 'base.html')
 
 def login_page(request):
     if request.method =="POST":
@@ -49,10 +52,6 @@ def login_page(request):
         form = LoginForm
     data = {"form": form}
     return render(request, "signup.html", data)
-
-# def logout_page(request):
-#     logout(request)
-
 
 #Activate this when we want login to work. Need to link it to a user profile.
 # @login_required
@@ -72,6 +71,8 @@ def pantry(request, user_id):
 def recipe(request, user_id):
     ingred = []
     user_test = UserIngred.objects.filter(user=request.user)
+    # Some recipes have water as an ingredient-- users might forget to add those, so they're added here to the search. Salt is also included.
+    ingred.append("water", "ice", "hot water", "cool water", "warm water", "lukewarm water", "salt", "table salt")
     for item in user_test:
         ingred.append(item.ing_master.ing)
     # # ingred = ["kale", "tomatoes", "fresh lemon juice", "large garlic cloves", "unsalted butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]

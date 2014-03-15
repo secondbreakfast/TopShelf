@@ -3,6 +3,8 @@ from django.db import models
 # import datetime
 
 #Add nutrition data to ingredient table, if I can find it. Allow search for diet?
+
+# the names Ing and Ingred are used for ingredients. Typing ingredients constantly is just tiring.
 class IngredMaster(models.Model):
     ing = models.CharField(max_length=100)
 

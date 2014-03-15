@@ -1,11 +1,12 @@
-from django.conf.urls import patterns, include, url
 from django.contrib.auth import views as auth_views
+from django.conf.urls import patterns, url, include
 
 from django.contrib import admin
 from tastypie.api import Api
 from topshelf.api.resources import UserIngredResource, UserRecipeResource, MasterIngredientResource
 
 admin.autodiscover()
+
 
 v1_api = Api(api_name="v1")
 v1_api.register(MasterIngredientResource())
@@ -15,10 +16,9 @@ v1_api.register(UserRecipeResource())
 # Url's for authentication and accounts
 urlpatterns = patterns('',
     url(r'^$', 'topshelf.views.index', name='index'),
-    
     url(r'^signup/', 'topshelf.views.signup', name="signup"),
     url(r'^accounts/login/', 'topshelf.views.login_page', name="login"),
-    # url(r'^accounts/logout/', 'topshelf.views.logout_page', name="logout"),
+    url(r'^accounts/logout/', 'topshelf.views.login_page', name="login"),
     url(r'^accounts/password/change/$', auth_views.password_change, name='password_change'),
     url(r'^accounts/password/change/done/$', auth_views.password_change_done, name='password_change_done'),
     url(r'^accounts/password/reset/$', auth_views.password_reset,
@@ -37,7 +37,7 @@ urlpatterns = patterns('',
     url(r'^(?P<user_id>\w+)/detail/$', 'topshelf.views.recipe_detail', name='recipe_detail'),
     # url(r'^favorite/', 'topshelf.views.favorite', name='favorite'),
 
-# For API and Angular
+# For API and Angular-- Putting Angular work on hold for now.
     url(r'^api/', include(v1_api.urls)),
     url(r'^app/', 'topshelf.views.angular', name="angular"),
     url(r'api/lecture/doc/',
@@ -47,4 +47,6 @@ urlpatterns = patterns('',
     ),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^autocomplete/', include('autocomplete_light.urls')),
+
 )

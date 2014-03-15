@@ -1,23 +1,25 @@
-{% extends "angular.html" %}
 {% load staticfiles %}
+{% extends "base.html" %}
 
 {#Need to show list so that items can be listed, edited, or deleted #}
 {% block title %}Your Pantry {% endblock %}
 
 {% block main %}
-<div class="header">Stock Your Pantry</div>
-<h1>Test</h1>
-{#<div ng-controller="PantryCtrl">#}
-{##}
-{#<form id="form" role="form">#}
-{##}
-{#    <div class="form-group move-down">#}
-{#        <label for="Autocomplete">Generic Autocomplete</label>#}
-{#        <input type="text" id="Autocomplete" class="form-control" ng-autocomplete="result1" details="details1" options="options1"/>#}
-{#    </div>#}
-{#    <div>result: {{result}}</div>#}
+<div class="header"><h3>Add ingredients to your pantry</h3></div>
+    Test
+       <div ng-app="app">
+        <div ng-view>
+            <div ng-controller="MyCtrl">
+      <autocomplete ng-model="yourchoice" data="movies" on-type="updateMovies"></autocomplete>
+    </div></div>
+</div>
+
+{#<form method="post">#}
+{#    {% csrf_token  %}#}
+{#    Ingredient: {{ form.ing_master }}<br>#}
+{#    Optional: Quantity: {{ form.quantity }}<br>#}
+{#    Optional: Purchase Date: {{ form.purch_date }} <br>#}
+{#    <input type="submit" value="Add Ingredient" />#}
 {##}
 {#</form>#}
-{#</div>#}
-
 {% endblock %}
