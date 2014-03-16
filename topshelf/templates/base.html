@@ -44,12 +44,22 @@
         Test
         <div ng-app="plunker">
         <div class='container-fluid' ng-controller="TypeaheadCtrl">
-            <h4>Static arrays</h4>
-{#            <pre>Model: {{selected | json}}</pre>#}
-            <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
-        </div>
+            <form ng-submit="submitForm()" >
+                <h4>Static arrays</h4>
+    {#            <pre>Model: {{selected | json}}</pre>#}
+                <input type="text" ng-model="pantry.ing_master.ing" typeahead="state for state in states | filter:$viewValue | limitTo:25" class="form-control">
+                <br>
+                <div>
+                Purchase date: <input type="text" ng-model="pantry.purch_date">
+                </div>
+                <div>
+                Quantity: <input type="text" ng-model="pantry.quantity">
+                </div>
+                <input type="submit" value="Add Ingredient">
+            </form>
         </div>
 
+        </div>
         {% endblock %}
     </div>
 
