@@ -1,7 +1,6 @@
 from tastypie.authorization import Authorization
 from tastypie.exceptions import Unauthorized
 
-#  At this point, no deletes allowed from the api.
 
 class UserObjectsOnlyAuthorization(Authorization):
     def read_list(self, object_list, bundle):

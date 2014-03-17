@@ -1,0 +1,15 @@
+ <div class='container-fluid'>
+    <form ng-submit="submitForm()" >
+        <h4>Stock Your Pantry</h4>
+        <input type="text" ng-model="pantry.ing_master.ing" typeahead="item for item in list_items | filter:$viewValue | limitTo:25" class="form-control">
+        <br>
+        <div>
+        Purchase date: <input type="text" ng-model="pantry.purch_date">
+        </div>
+        <div>
+        Quantity: <input type="text" ng-model="pantry.quantity">
+        </div>
+        <input type="submit" value="Add Ingredient">
+    </form>
+
+</div>

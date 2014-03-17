@@ -1,3 +1,4 @@
+import autocomplete_light
 from django.forms import ModelForm, DateField
 from topshelf.models import IngredMaster, UserIngred
 
@@ -38,7 +39,9 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget= forms.PasswordInput)
 
 class IngredForm(ModelForm):
+    widgets = autocomplete_light.TextWidget(UserIngred)
     class Meta:
         model = UserIngred
-
+#
+# WidgetForm = autocomplete_light.modelform_factory(UserIngred)
 #Add date widget?

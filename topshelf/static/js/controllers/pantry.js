@@ -1,16 +1,28 @@
-/**
- * Created by zhilabug on 3/13/14.
- */
+//var app = angular.module('app', ['ui.bootstrap']);
 
-//Every controller has $scope built into it. Will take in more values as the file gets larger.
+function PantryCtrl($scope, $http, $location) {
 
-function PantryCtrl($scope, $http) {
-//    Generic format for making a get call, using HTTP library. Uses a period instead of {} to link items.
-    $http.get('/api/v1/pantry/?format=json').
-        //        Creates new object called students, on success.
-        success(function(pantry){
-//            Sets a student variable. Need to use students.objects because it will include metadata and get an error. Will not allow you to loop through.
-            $scope.pantry = pantry.objects;
-        });
+  $scope.pantry = undefined;
+  $http.get('http://127.0.0.1:8000/api/v1/all_ingredients/?format=json&limit=0').
+      success(function(food){
+          list_items = []
+//          Note: Below probably isn't the most efficient way to do this.
+          for (var i = 0; i < food.objects.length; i++){
+              list_items.push(food.objects[i].ing)
+          }
+          console.log(list_items);
+          $scope.list_items = list_items;
+    });
 
+  $scope.submitForm = function() {
+      console.log($scope.pantry);
+      //   $http.get("/app/"+$routeParams.id+"/pantry/").success(function(data) {
+//                 $scope.record = data;
+//        });
+       $http.post('/api/v1/pantry/?format=json', $scope.pantry).
+        success(function(response){
+          console.log($scope.pantry);
+            $location.path("/");
+        })
+    }
 }

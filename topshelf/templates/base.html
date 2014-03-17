@@ -7,20 +7,21 @@
 <head>
     <title>{% block title %}TopShelf{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% static 'css/autocomplete.css' %}">
+{#    <link rel="stylesheet" href="{% static 'css/autocomplete.css' %}">#}
 
     <script type="text/javascript"  src="{% static 'js/vendor/jquery-1.11.0.min.js' %}"></script>
+{#    {% include 'autocomplete_light/static.html' %}#}
 
-{#    Angular   #}
     <script type="text/javascript"  src="{% static 'js/vendor/angular.js' %}"></script>
     <script type="text/javascript"  src="{% static 'js/vendor/angular-route.js' %}"></script>
-    <script type="text/javascript"  src="{% static 'js/vendor/angular-resource.js' %}"></script>
+{#    <script type="text/javascript"  src="{% static 'js/vendor/angular-resource.js' %}"></script>#}
 
-{#    <script type="text/javascript" src="{% static 'js/autocomplete.js' %}"></script>#}
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+{#    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">#}
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js" ></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/controllers/pantry.js' %}"></script>
 </head>
 
 <body>
@@ -40,27 +41,12 @@
     </div>
 
     <div id="main">
-        {% block main %}
-        Test
-        <div ng-app="plunker">
-        <div class='container-fluid' ng-controller="TypeaheadCtrl">
-            <form ng-submit="submitForm()" >
-                <h4>Static arrays</h4>
-    {#            <pre>Model: {{selected | json}}</pre>#}
-                <input type="text" ng-model="pantry.ing_master.ing" typeahead="state for state in states | filter:$viewValue | limitTo:25" class="form-control">
-                <br>
-                <div>
-                Purchase date: <input type="text" ng-model="pantry.purch_date">
-                </div>
-                <div>
-                Quantity: <input type="text" ng-model="pantry.quantity">
-                </div>
-                <input type="submit" value="Add Ingredient">
-            </form>
+        <div ng-app="app">
+            <div ng-view>
+                {% block main %}
+                {% endblock %}
+            </div>
         </div>
-
-        </div>
-        {% endblock %}
     </div>
 
     <div id="footer">
