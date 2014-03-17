@@ -41,10 +41,10 @@
     </div>
 
     <div id="main">
+         {% block main %}
+         {% endblock %}
         <div ng-app="app">
             <div ng-view>
-                {% block main %}
-                {% endblock %}
             </div>
         </div>
     </div>

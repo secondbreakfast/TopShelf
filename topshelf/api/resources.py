@@ -1,17 +1,21 @@
 from django.conf import settings
+from tastypie.authentication import BasicAuthentication
 from tastypie.authorization import Authorization
 from tastypie.bundle import Bundle
-from tastypie.constants import ALL_WITH_RELATIONS
 from tastypie.fields import ToManyField, CharField, ToOneField
 from tastypie.resources import ModelResource, Resource
+from topshelf.api.authorization import UserObjectsOnlyAuthorization
 from topshelf.models import IngredMaster, UserIngred, UserRecipe
 
 # Limit post, delete, etc to only the admin?
 class MasterIngredientResource(ModelResource):
     class Meta:
+        max_limit = None
         queryset = IngredMaster.objects.all()
         resource_name = "all_ingredients"
         authorization = Authorization()
+        authentication = BasicAuthentication()
+
 
 class UserIngredResource(ModelResource):
     ing_master= ToOneField(MasterIngredientResource, "ing_master", full=True)
@@ -19,7 +23,9 @@ class UserIngredResource(ModelResource):
     class Meta:
         queryset = UserIngred.objects.all()
         resource_name = "pantry"
-        authorization = Authorization()
+        authorization = UserObjectsOnlyAuthorization()
+        authentication = BasicAuthentication()
+
 
 class UserRecipeResource(ModelResource):
     ingred = ToManyField(MasterIngredientResource, "ingred", null=True)
@@ -27,7 +33,8 @@ class UserRecipeResource(ModelResource):
     class Meta:
         queryset = UserRecipe.objects.all()
         resource_name = "user_favorites"
-        authorization = Authorization()
+        authorization = UserObjectsOnlyAuthorization()
+        authentication = BasicAuthentication()
 
 ######################
 # Non-Model Resource #

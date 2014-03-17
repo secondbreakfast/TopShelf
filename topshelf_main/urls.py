@@ -35,7 +35,7 @@ urlpatterns = patterns('',
 
 # For main site pages-- these may be phased out depending on Angular. For now, I have both.
 #     url(r'^(?P<user_id>\w+)/pantry/$', 'topshelf.views.pantry', name='pantry'),
-    url(r'^(?P<user_id>\w+)/recipe/$', 'topshelf.views.recipe', name='recipe'),
+    url(r'^(?P<user_id>\w+)/recipe/$', 'topshelf.views.recipe1', name='recipe'),
     url(r'^(?P<user_id>\w+)/detail/$', 'topshelf.views.recipe_detail', name='recipe_detail'),
     # url(r'^favorite/', 'topshelf.views.favorite', name='favorite'),
 

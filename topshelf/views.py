@@ -66,16 +66,21 @@ def pantry(request, user_id):
     data = {'form': form}
     return render(request, "pantry.html", data)
 
-
-# Need to let user pick 3 ingredients for API call.
-def recipe(request, user_id):
+# Need to let user pick 3 ingredients for API call. Add this functionality later, if needed.
+def recipe1(request, user_id):
     ingred = []
     user_test = UserIngred.objects.filter(user=request.user)
+
     # Some recipes have water as an ingredient-- users might forget to add those, so they're added here to the search. Salt is also included.
-    ingred.append("water", "ice", "hot water", "cool water", "warm water", "lukewarm water", "salt", "table salt")
+    more_ingreds = ["water", "ice", "hot water", "cool water", "warm water", "lukewarm water", "salt", "table salt"]
+    ingred = ingred + more_ingreds
+
+    # Iterates through each item returned from user and adds it to a simple list.
     for item in user_test:
         ingred.append(item.ing_master.ing)
-    # # ingred = ["kale", "tomatoes", "fresh lemon juice", "large garlic cloves", "unsalted butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
+
+    # Sample ingredient output below.
+    # ingred = ["kale", "tomatoes", "fresh lemon juice", "large garlic cloves", "unsalted butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
     recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&allowedIngredient[]=garlic&allowedIngredient[]=mushroom&maxResult=1000')
     recipes = recipes.json()
 
@@ -85,23 +90,53 @@ def recipe(request, user_id):
         if not set(recipe_ing) - set(ingred):
             match.append(item)
 
-            # Tried making an object out of
-            # name = item['recipeName']
-            # recipe_id = item['id']
-            # source = item['sourceDisplayName']
-            # img = item['smallImageUrls']
-            # match[name] = {}
-            # match[name]['recipe_id'] = recipe_id
-            # match[name]['source'] = source
-            # match[name]['img'] = img
+        # I may try to add more functionality later with the else statement, like any recipes that the user came very close to getting.
         # else:
         #     match = "Not a match!"
-        data = {"match": match}
+        data = {"match": match, "ingred": ingred}
 
     return render(request, "recipe.html", data)
 
     # data = {"match": ingred}
     # return render(request, "recipe.html", data)
+
+# # Need to let user pick 3 ingredients for API call.
+# def recipe(request, user_id):
+#     # form = RecipeForm()
+#     ingred = []
+#     user_test = UserIngred.objects.filter(user=request.user)
+#     # Some recipes have water as an ingredient-- users might forget to add those, so they're added here to the search. Salt is also included.
+#     # ingred.append(["water", "ice", "hot water", "cool water", "warm water", "lukewarm water", "salt", "table salt"])
+#     for item in user_test:
+#         ingred.append(item.ing_master.ing)
+#     # # ingred = ["kale", "tomatoes", "fresh lemon juice", "large garlic cloves", "unsalted butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
+#     recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&allowedIngredient[]=garlic&allowedIngredient[]=mushroom&maxResult=1000')
+#     recipes = recipes.json()
+#
+#     match = []
+#     for item in recipes['matches']:
+#         recipe_ing = item['ingredients']
+#         if not set(recipe_ing) - set(ingred):
+#             match.append(item)
+#
+#             # Tried making an object out of
+#             # name = item['recipeName']
+#             # recipe_id = item['id']
+#             # source = item['sourceDisplayName']
+#             # img = item['smallImageUrls']
+#             # match[name] = {}
+#             # match[name]['recipe_id'] = recipe_id
+#             # match[name]['source'] = source
+#             # match[name]['img'] = img
+#         # else:
+#         #     match = "Not a match!"
+#         data = {"match": match}
+#
+#     return render(request, "recipe.html", data)
+#
+#     # data = {"match": ingred}
+#     # return render(request, "recipe.html", data)
+#
 
 # Need to let user pick 3 ingredients for API call.
 def recipe_detail(request, user_id):

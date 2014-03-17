@@ -11,8 +11,12 @@ class IngredMaster(models.Model):
     def __unicode__(self):
         return self.ing
 
-    # def __repr__(self):
-    #     return self.ing
+
+# class DietMaster(models.Model):
+#     diet = models.CharField(max_length=100)
+#
+#     def __unicode__(self):
+#         return self.ing
 
 class UserIngred(models.Model):
     ing_master = models.ForeignKey(IngredMaster)
@@ -23,6 +27,7 @@ class UserIngred(models.Model):
     user = models.ForeignKey(User)
     #Counts how many times that user has used the ingredient.
     count = models.IntegerField(default=1)
+
 
 class UserRecipe(models.Model):
     recipe_name = models.CharField(max_length=100)

@@ -39,9 +39,14 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget= forms.PasswordInput)
 
 class IngredForm(ModelForm):
-    widgets = autocomplete_light.TextWidget(UserIngred)
     class Meta:
         model = UserIngred
-#
+
+# class RecipeForm(ModelForm):
+#     select1 = forms.ChoiceField(UserIngred.ing_master)
+#     select2 = forms.ChoiceField(UserIngred.ing_master)
+#     select3 = forms.ChoiceField(UserIngred.ing_master)
+#     diet_choice = forms.ChoiceField(DietMaster.diet)
+
 # WidgetForm = autocomplete_light.modelform_factory(UserIngred)
 #Add date widget?
