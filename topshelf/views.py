@@ -4,23 +4,24 @@ import requests
 
 from topshelf.forms import IngredForm
 
+# Additional features:
 #When a user adds it to their database, add a count to their ingredients.
-# Add about page?
-# Need to enable login
 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 from topshelf.forms import SignupForm, LoginForm
-
-
-
 from topshelf.models import UserIngred
 
+def angular(request):
+    return render(request, 'base.html')
 
 def index(request):
     return render(request, "index.html")
+#
+# def about(request):
+#     return render(request, "about.html")
 
 def signup(request):
     if request.method =="POST":
@@ -37,10 +38,7 @@ def signup(request):
     return render(request, "signup.html", data)
 
 
-#Initialized login page, authenticates, and redirects to pantry. Maybe make a user dashboard?
-def angular(request):
-    return render(request, 'base.html')
-
+#Initialized login page, authenticates, and redirects to pantry.
 def login_page(request):
     if request.method =="POST":
         form = LoginForm(request.POST)
@@ -55,18 +53,16 @@ def login_page(request):
     data = {"form": form}
     return render(request, "signup.html", data)
 
-#Activate this when we want login to work. Need to link it to a user profile.
-# @login_required
-def pantry(request, user_id):
-    if request.method=="POST":
-        form = IngredForm(request.POST)
-        if form.is_valid():
-            if form.save():
-                return redirect("{}/pantry/".format(user_id))
-    else:
-        form = IngredForm()
-    data = {'form': form}
-    return render(request, "pantry.html", data)
+# def pantry(request, user_id):
+#     if request.method=="POST":
+#         form = IngredForm(request.POST)
+#         if form.is_valid():
+#             if form.save():
+#                 return redirect("{}/pantry/".format(user_id))
+#     else:
+#         form = IngredForm()
+#     data = {'form': form}
+#     return render(request, "pantry.html", data)
 
 # Test view. Don't want to mess up the original.
 # Need to let user pick 3 ingredients for API call. Add this functionality later, if needed.
@@ -98,6 +94,13 @@ def recipe1(request, user_id):
         #     match = "Not a match!"
     return HttpResponse(json.dumps(match),content_type='application/json')
 
+
+# User.objects.filter(reduce(operator.or_, (Q(first_name__contains=x) for x in ['x', 'y', 'z'])))
+#
+# for x in [1,2,3]:
+#     Q(first_name__containes=x)
+#
+# Q(first_name__contains=1) | Q(first_name__contains=2) | Q(first_name__contains=3)
 
 # # Need to let user pick 3 ingredients for API call.
 # def recipe(request, user_id):

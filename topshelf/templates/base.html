@@ -10,11 +10,10 @@
 {#    <link rel="stylesheet" href="{% static 'css/autocomplete.css' %}">#}
 
     <script type="text/javascript"  src="{% static 'js/vendor/jquery-1.11.0.min.js' %}"></script>
-{#    {% include 'autocomplete_light/static.html' %}#}
 
     <script type="text/javascript"  src="{% static 'js/vendor/angular.js' %}"></script>
     <script type="text/javascript"  src="{% static 'js/vendor/angular-route.js' %}"></script>
-{#    <script type="text/javascript"  src="{% static 'js/vendor/angular-resource.js' %}"></script>#}
+    <script type="text/javascript"  src="{% static 'js/vendor/angular-resource.js' %}"></script>
 
 
 {#    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">#}
@@ -22,6 +21,7 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/controllers/pantry.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/controllers/recipe.js' %}"></script>
 </head>
 
 <body>
@@ -38,6 +38,8 @@
 	{% endif %}
 	<hr />
         {% endblock %}
+
+{#    Add social share buttons, buy me a beer button. #}
     </div>
 
     <div id="main">

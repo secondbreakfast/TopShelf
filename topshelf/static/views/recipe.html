@@ -1,0 +1,16 @@
+ <div class='container-fluid'>
+<!--    Add recipe list with a dropdown window using bootstrap's accordion view, using a get request. See my sample recipe detail view -->
+<div class="recipe_match" ng-repeat="item in food">
+    <div class="match_images">
+         <img src="{{ item.smallImageUrls.0 }}"/>
+    </div>
+    <div class="match_list">
+        <ul>{{ item.recipeName }}
+        <li>From: {{ item.sourceDisplayName }}</li>
+        <li>{{ item.id }}</li>
+        </ul>
+    </div>
+</div>
+     hi
+
+</div>

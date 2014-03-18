@@ -1,11 +1,7 @@
 from django.contrib import admin
-from topshelf.models import IngredMaster, UserIngred
-# import autocomplete_light
-
-# class UserIngredAdmin(admin.ModelAdmin):
-#     # This will generate a ModelForm
-#     form = autocomplete_light.modelform_factory(UserIngred)
+from topshelf.models import IngredMaster, UserIngred, IngredMaster_test
 
 admin.site.register(UserIngred)
 admin.site.register(IngredMaster)
+admin.site.register(IngredMaster_test)
 

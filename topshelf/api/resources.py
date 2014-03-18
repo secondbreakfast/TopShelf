@@ -21,7 +21,7 @@ class UserIngredResource(ModelResource):
     ing_master= ToOneField(MasterIngredientResource, "ing_master", full=True)
 
     class Meta:
-        queryset = UserIngred.objects.all()
+        queryset = UserIngred.objects.all().order_by('ing_master')
         resource_name = "pantry"
         authorization = UserObjectsOnlyAuthorization()
         authentication = BasicAuthentication()

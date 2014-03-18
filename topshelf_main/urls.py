@@ -4,10 +4,6 @@ from django.conf.urls import patterns, url, include
 from tastypie.api import Api
 from topshelf.api.resources import UserIngredResource, UserRecipeResource, MasterIngredientResource
 
-# import autocomplete_light
-# # import every app/autocomplete_light_registry.py
-# autocomplete_light.autodiscover()
-
 from django.contrib import admin
 admin.autodiscover()
 
@@ -36,6 +32,7 @@ urlpatterns = patterns('',
 # For main site pages-- these may be phased out depending on Angular. For now, I have both.
 #     url(r'^(?P<user_id>\w+)/pantry/$', 'topshelf.views.pantry', name='pantry'),
 #     url(r'^(?P<user_id>\w+)/recipe/$', 'topshelf.views.recipe', name='recipe'),
+#     url(r'^about/', 'topshelf.views.about', name='about'),
     url(r'^(?P<user_id>\w+)/recipe_test/$', 'topshelf.views.recipe1', name='recipe_test'),
     url(r'^(?P<user_id>\w+)/detail/$', 'topshelf.views.recipe_detail', name='recipe_detail'),
     # url(r'^favorite/', 'topshelf.views.favorite', name='favorite'),

@@ -1,7 +1,8 @@
  <div class='container-fluid'>
+    <div> Need to add a list of inventory items, that can be deleted with a click. </div>
     <form ng-submit="submitForm()" >
         <h4>Stock Your Pantry</h4>
-        <input type="text" ng-model="pantry.ing_master" typeahead="item.resource_uri as item.ing for item in list_items | filter:$viewValue | limitTo:25" class="form-control">
+        Add an ingredient: <input type="text" ng-model="pantry.ing_master" typeahead="item.resource_uri as item.ing for item in list_items | filter:$viewValue | limitTo:30" class="form-control">
         <br>
         <div>
         Purchase date: <input type="text" ng-model="pantry.purch_date">

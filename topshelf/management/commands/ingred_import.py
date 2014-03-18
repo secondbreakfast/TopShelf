@@ -16,7 +16,7 @@ class Command(BaseCommand):
 
         counter = 0
         for key, value in filtered.iteritems():
-            if value > 2:
+            if value > 5:
                 IngredMaster.objects.create(ing = key)
                 counter +=1
             # if counter == 10:

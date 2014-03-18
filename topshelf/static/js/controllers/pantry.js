@@ -14,7 +14,6 @@ function PantryCtrl($scope, $http, $location) {
     });
 
   $scope.submitForm = function() {
-
       $http.post('/api/v1/pantry/?format=json', $scope.pantry).
             success(function(response){
                 console.log($scope.pantry);
