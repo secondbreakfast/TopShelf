@@ -83,81 +83,29 @@ def recipe1(request, user_id):
 
     # # Sample output for ingred below.
     # ingred = ["kale", "lemon juice", "tomatoes", "garlic cloves", "butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
-    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&maxResult=1000')
+    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&maxResult=500')
     recipes = recipes.json()
 
     ingred.sort()
 
     match = []
     for item in recipes['matches']:
-        s = difflib.SequenceMatcher(None, ingred, item['ingredients'], autojunk=True).ratio()
-        if s > .04:
-            item['ratio']= s
-            match.append(item)
-
+        match_ratio = difflib.SequenceMatcher(None, ingred, item['ingredients'], autojunk=True).ratio()
+        greatest_ratio = 0
+        if match_ratio > .04:
+            if match_ratio > greatest_ratio:
+                greatest_ratio = match_ratio
+                item['ratio']= match_ratio
+                match.insert(0, item)
+            else:
+                match.insert(-1, item)
     return HttpResponse(json.dumps(match),content_type='application/json')
 
 
-# User.objects.filter(reduce(operator.or_, (Q(first_name__contains=x) for x in ['x', 'y', 'z'])))
-#
-# for x in [1,2,3]:
-#     Q(first_name__containes=x)
-#
-# Q(first_name__contains=1) | Q(first_name__contains=2) | Q(first_name__contains=3)
-
-
-
-
-
-
-
-
-
-
-# # Need to let user pick 3 ingredients for API call.
-# def recipe(request, user_id):
-#     # form = RecipeForm()
-#     ingred = []
-#     user_test = UserIngred.objects.filter(user=request.user)
-    # Some recipes have water as an ingredient-- users might forget to add those, so they're added here to the search. Salt is also included.
-    # more_ingreds = ["water", "ice", "hot water", "cool water", "warm water", "lukewarm water", "salt", "table salt"]
-    # ingred = ingred + more_ingreds
-
-#     for item in user_test:
-#         ingred.append(item.ing_master.ing)
-#     # # ingred = ["kale", "tomatoes", "fresh lemon juice", "large garlic cloves", "unsalted butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
-#     recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&allowedIngredient[]=garlic&allowedIngredient[]=mushroom&maxResult=1000')
-#     recipes = recipes.json()
-#
-#     match = []
-#     for item in recipes['matches']:
-#         recipe_ing = item['ingredients']
-#         if not set(recipe_ing) - set(ingred):
-#             match.append(item)
-#
-#             # Tried making an object out of
-#             # name = item['recipeName']
-#             # recipe_id = item['id']
-#             # source = item['sourceDisplayName']
-#             # img = item['smallImageUrls']
-#             # match[name] = {}
-#             # match[name]['recipe_id'] = recipe_id
-#             # match[name]['source'] = source
-#             # match[name]['img'] = img
-#         # else:
-#         #     match = "Not a match!"
-#        data = {"match": match, "ingred": ingred}
-#
-#     return render(request, "recipe.html", data)
-#
-#     # data = {"match": ingred}
-#     # return render(request, "recipe.html", data)
-#
 
 def recipe_detail(request, user_id):
     recipes = requests.get('http://api.yummly.com/v1/api/recipe/Garlic-butter-roasted-mushrooms-305440?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&')
     match = recipes.json()
-
     data = {"match": match}
     return render(request, "recipeDetail.html", data)
 

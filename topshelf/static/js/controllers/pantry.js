@@ -20,4 +20,16 @@ function PantryCtrl($scope, $http, $location) {
                 $location.path("/:id/pantry/");
         })
     }
+
+  $http.get('/api/v1/pantry/?format=json').
+      success(function(user_pantry_list){
+          $scope.pantry_data = user_pantry_list.objects;
+    });
+
+  $scope.deleteItem = function() {
+      $http.delete(item.resource_uri + '?format=json').
+          success(function(){
+             console.log("Item deleted!")
+        });
+    }
 }
