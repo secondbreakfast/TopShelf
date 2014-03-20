@@ -5,20 +5,29 @@ from tastypie.bundle import Bundle
 from tastypie.fields import ToManyField, CharField, ToOneField
 from tastypie.resources import ModelResource, Resource
 from topshelf.api.authorization import UserObjectsOnlyAuthorization
-from topshelf.models import IngredMaster, UserIngred, UserRecipe
+from topshelf.models import IngredMaster, UserIngred, UserRecipe, IngredMaster_test
+
+# # Limit post, delete, etc to only the admin?
+# class MasterIngredientResource(ModelResource):
+#     class Meta:
+#         max_limit = None
+#         queryset = IngredMaster.objects.all()
+#         resource_name = "all_ingredients"
+#         authorization = Authorization()
+#         authentication = BasicAuthentication()
 
 # Limit post, delete, etc to only the admin?
 class MasterIngredientResource(ModelResource):
     class Meta:
         max_limit = None
-        queryset = IngredMaster.objects.all()
+        queryset = IngredMaster_test.objects.all()
         resource_name = "all_ingredients"
         authorization = Authorization()
         authentication = BasicAuthentication()
 
 
 class UserIngredResource(ModelResource):
-    ing_master= ToOneField(MasterIngredientResource, "ing_master", full=True)
+    ing_master= ToOneField(MasterIngredientResource, "ing_master", full=False)
 
     class Meta:
         queryset = UserIngred.objects.all().order_by('ing_master')

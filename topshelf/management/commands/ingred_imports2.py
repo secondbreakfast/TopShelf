@@ -13,6 +13,7 @@ from topshelf.models import IngredMaster_test
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
+        # This site had a nice list of lots of ingredients, so I scraped it.
         data = urllib2.urlopen('http://www.food.com/library/all.zsp')
         food_data = BeautifulSoup(data, from_encoding='utf-8')
         data.close()
@@ -22,4 +23,4 @@ class Command(BaseCommand):
             ingredients.append(a.encode_contents())
 
         for item in ingredients:
-            IngredMaster_test.objects.create(ing = item)
+            IngredMaster_test.objects.create(ing_test = item)

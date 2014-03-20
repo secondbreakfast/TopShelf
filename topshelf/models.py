@@ -12,13 +12,13 @@ class IngredMaster(models.Model):
         return self.ing
 
 class IngredMaster_test(models.Model):
-    ing = models.CharField(max_length=1000)
+    ing_test = models.CharField(max_length=10000)
 
     def __unicode__(self):
-        return self.ing
+        return self.ing_test
 
 class UserIngred(models.Model):
-    ing_master = models.ForeignKey(IngredMaster)
+    ing_master = models.ForeignKey(IngredMaster_test)
     # May need to add quantity, purchasedate, to intermediary table
     quantity = models.FloatField(null=True, blank=True)
     #Use default value for data entry?
@@ -26,7 +26,6 @@ class UserIngred(models.Model):
     user = models.ForeignKey(User)
     #Counts how many times that user has used the ingredient.
     count = models.IntegerField(default=1)
-
 
 class UserRecipe(models.Model):
     recipe_name = models.CharField(max_length=100)

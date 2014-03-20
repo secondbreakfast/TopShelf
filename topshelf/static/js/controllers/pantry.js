@@ -5,7 +5,7 @@ function PantryCtrl($scope, $http, $location) {
           list_items = []
 //          Note: Below probably isn't the most efficient way to do this.
           for (var i = 0; i < food.objects.length; i++){
-              list_items.push(food.objects[i].ing)
+              list_items.push(food.objects[i].ing_test)
           }
           console.log(list_items);
           $scope.list_items = list_items;

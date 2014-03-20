@@ -3,14 +3,14 @@
 {% block title %}Recipes{% endblock %}
 
 {% block main %}
-    {% for stuff in match %}
-    <ul>{{ stuff.recipeName }}
-    <li>{{ stuff.sourceDisplayName }}</li>
-    <li>{{ stuff.id }}</li>
-    <img src="{{ stuff.smallImageUrls.0 }}"/>
-    </ul>
-    {% endfor %}
+{#    {% for stuff in match %}#}
+{#    <ul>{{ stuff.recipeName }}#}
+{#    <li>{{ stuff.sourceDisplayName }}</li>#}
+{#    <li>{{ stuff.id }}</li>#}
+{#    <img src="{{ stuff.smallImageUrls.0 }}"/>#}
+{#    </ul>#}
+{#    {% endfor %}#}
 
-{{ ingred }}
+test: {{ match }}
 
 {% endblock %}

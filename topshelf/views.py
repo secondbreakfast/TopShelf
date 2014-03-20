@@ -1,3 +1,4 @@
+import difflib
 import json
 from django.http import HttpResponse
 import requests
@@ -12,7 +13,8 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 from topshelf.forms import SignupForm, LoginForm
-from topshelf.models import UserIngred
+from topshelf.models import UserIngred, IngredMaster
+
 
 def angular(request):
     return render(request, 'base.html')
@@ -66,32 +68,33 @@ def login_page(request):
 
 # Test view. Don't want to mess up the original.
 # Need to let user pick 3 ingredients for API call. Add this functionality later, if needed.
+
+# Note: look up model_to_dict for re-importing data, or make another element that stores "contains" info from the new list.
 def recipe1(request, user_id):
-    ingred = []
+    # Empty list to add ingredients from the user's pantry.
+    ingred_part1 = []
     user_test = UserIngred.objects.filter(user=request.user)
-
-    # Some recipes have water as an ingredient-- users might forget to add those, so they're added here to the search. Salt is also included.
-    more_ingreds = ["water", "ice", "hot water", "cool water", "warm water", "lukewarm water", "salt", "table salt"]
-    ingred = ingred + more_ingreds
-
-    # Iterates through each item returned from user and adds it to a simple list.
     for item in user_test:
-        ingred.append(item.ing_master.ing)
+        ingred_part1.append(item.ing_master.ing_test)
 
-    # Sample ingredient output below.
-    # ingred = ["kale", "tomatoes", "fresh lemon juice", "large garlic cloves", "unsalted butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
-    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&allowedIngredient[]=garlic&allowedIngredient[]=mushroom&maxResult=1000')
+    # # Some recipes have water as an ingredient-- users might forget to add those, so they're added here to the search. Salt is also included.
+    ingred_part2 = ["water", "ice", "hot water", "cool water", "warm water", "lukewarm water", "salt", "table salt"]
+    ingred = ingred_part1 + ingred_part2
+
+    # # Sample output for ingred below.
+    # ingred = ["kale", "lemon juice", "tomatoes", "garlic cloves", "butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
+    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&maxResult=1000')
     recipes = recipes.json()
+
+    ingred.sort()
 
     match = []
     for item in recipes['matches']:
-        recipe_ing = item['ingredients']
-        if not set(recipe_ing) - set(ingred):
+        s = difflib.SequenceMatcher(None, ingred, item['ingredients'], autojunk=True).ratio()
+        if s > .04:
+            item['ratio']= s
             match.append(item)
 
-        # I may try to add more functionality later with the else statement, like any recipes that the user came very close to getting.
-        # else:
-        #     match = "Not a match!"
     return HttpResponse(json.dumps(match),content_type='application/json')
 
 
@@ -101,6 +104,15 @@ def recipe1(request, user_id):
 #     Q(first_name__containes=x)
 #
 # Q(first_name__contains=1) | Q(first_name__contains=2) | Q(first_name__contains=3)
+
+
+
+
+
+
+
+
+
 
 # # Need to let user pick 3 ingredients for API call.
 # def recipe(request, user_id):

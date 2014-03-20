@@ -1,4 +1,3 @@
-import autocomplete_light
 from django.forms import ModelForm, DateField
 from topshelf.models import IngredMaster, UserIngred
 
@@ -47,6 +46,3 @@ class IngredForm(ModelForm):
 #     select2 = forms.ChoiceField(UserIngred.ing_master)
 #     select3 = forms.ChoiceField(UserIngred.ing_master)
 #     diet_choice = forms.ChoiceField(DietMaster.diet)
-
-# WidgetForm = autocomplete_light.modelform_factory(UserIngred)
-#Add date widget?
