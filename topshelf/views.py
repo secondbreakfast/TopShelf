@@ -11,12 +11,12 @@ from django.shortcuts import render, redirect
 from topshelf.forms import SignupForm, LoginForm
 from topshelf.models import UserIngred, IngredMaster
 
+def index(request):
+    return render(request, "index.html")
 
 def angular(request):
     return render(request, 'base.html')
 
-def index(request):
-    return render(request, "index.html")
 #
 # def about(request):
 #     return render(request, "about.html")
@@ -52,7 +52,7 @@ def login_page(request):
     return render(request, "signup.html", data)
 
 # Note: look up model_to_dict for re-importing data, or make another element that stores "contains" info from the new list.
-def recipe1(request, user_id):
+def recipe(request, user_id):
     # api_params = requests.get('http://127.0.0.1:8000/api/v1/api_params/?format=json')
     # api_params = api_params.json()
     # choice1 = api_params['choice1']
@@ -87,8 +87,9 @@ def recipe1(request, user_id):
     return HttpResponse(json.dumps(match),content_type='application/json')
 
 def recipe_detail(request, user_id):
-    recipes = requests.get('http://api.yummly.com/v1/api/recipe/Garlic-butter-roasted-mushrooms-305440?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&')
-    match = recipes.json()
-    data = {"match": match}
-    return render(request, "recipeDetail.html", data)
+    recipe_id = request.GET.get('recipe_id')
+    resp = requests.get("http://api.yummly.com/v1/api/recipe/{0}?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83".format(recipe_id))
+    recipe_data = resp.json()
+    data = {"recipe_data":recipe_data}
 
+    return HttpResponse(json.dumps(data),content_type='application/json')
