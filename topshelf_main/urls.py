@@ -2,7 +2,8 @@ from django.contrib.auth import views as auth_views
 from django.conf.urls import patterns, url, include
 
 from tastypie.api import Api
-from topshelf.api.resources import UserIngredResource, UserRecipeResource, MasterIngredientResource
+from topshelf.api.resources import UserIngredResource, UserRecipeResource, MasterIngredientResource,ApiParamsResource, \
+    SearchParamsResource
 
 from django.contrib import admin
 admin.autodiscover()
@@ -11,6 +12,8 @@ v1_api = Api(api_name="v1")
 v1_api.register(MasterIngredientResource())
 v1_api.register(UserIngredResource())
 v1_api.register(UserRecipeResource())
+v1_api.register(ApiParamsResource())
+v1_api.register(SearchParamsResource())
 
 # Url's for authentication and accounts
 urlpatterns = patterns('',
@@ -30,12 +33,10 @@ urlpatterns = patterns('',
     url(r'accounts/', include('registration.backends.default.urls')),
 
 # For main site pages-- these may be phased out depending on Angular. For now, I have both.
-#     url(r'^(?P<user_id>\w+)/pantry/$', 'topshelf.views.pantry', name='pantry'),
 #     url(r'^(?P<user_id>\w+)/recipe/$', 'topshelf.views.recipe', name='recipe'),
 #     url(r'^about/', 'topshelf.views.about', name='about'),
     url(r'^(?P<user_id>\w+)/recipe_test/$', 'topshelf.views.recipe1', name='recipe_test'),
     url(r'^(?P<user_id>\w+)/detail/$', 'topshelf.views.recipe_detail', name='recipe_detail'),
-    # url(r'^favorite/', 'topshelf.views.favorite', name='favorite'),
 
 # For API and Angular
     url(r'^api/', include(v1_api.urls)),
@@ -45,7 +46,6 @@ urlpatterns = patterns('',
         kwargs={"tastypie_api_module": "v1_api",
                 "namespace": "lecture_tastypie_swagger"}
     ),
-
     url(r'^admin/', include(admin.site.urls)),
 
 )

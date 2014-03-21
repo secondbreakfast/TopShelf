@@ -41,6 +41,10 @@ class IngredForm(ModelForm):
     class Meta:
         model = UserIngred
 
+    # def __init__(self, user, *args, **kwargs):
+    #     super(IngredForm, self).__init__(*args, **kwargs)
+    #     self.fields['ing_master'].queryset = UserIngred.objects.filter(user=user)
+
 # class RecipeForm(ModelForm):
 #     select1 = forms.ChoiceField(UserIngred.ing_master)
 #     select2 = forms.ChoiceField(UserIngred.ing_master)

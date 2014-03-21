@@ -23,35 +23,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/topshelf/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="48" selection-start="4026" selection-end="4026" vertical-scroll-proportion="0.7050473" vertical-offset="964" max-vertical-offset="1598">
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-                <element signature="e#491#526#0" expanded="false" />
-                <element signature="e#552#588#0" expanded="false" />
-                <element signature="e#682#1078#0" expanded="false" />
-                <element signature="e#1175#1655#0" expanded="false" />
-                <marker date="1395275296379" expanded="true" signature="2835:3644" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ingred_import.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/topshelf/management/commands/ingred_import.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+            <state line="70" column="121" selection-start="2379" selection-end="2472" vertical-scroll-proportion="0.0" vertical-offset="605" max-vertical-offset="1513">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pantry.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/topshelf/static/views/pantry.html">
+      <file leaf-file-name="recipe.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topshelf/static/views/recipe.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="54" selection-start="806" selection-end="806" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="408">
+            <state line="22" column="44" selection-start="986" selection-end="986" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="544">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recipe.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/topshelf/static/js/controllers/recipe.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="1" selection-start="577" selection-end="577" vertical-scroll-proportion="0.4729521" vertical-offset="0" max-vertical-offset="647">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recipeDetail.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topshelf/templates/recipeDetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="49" selection-start="567" selection-end="567" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="425">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topshelf/static/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="4" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
@@ -60,34 +71,7 @@
       <file leaf-file-name="pantry.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/topshelf/static/js/controllers/pantry.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="43" selection-start="706" selection-end="706" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/topshelf/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="38" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recipe.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/topshelf/static/js/controllers/recipe.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="17" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="resources.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/topshelf/api/resources.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="78" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="1326">
+            <state line="6" column="29" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1122">
               <folding />
             </state>
           </provider>
@@ -103,8 +87,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/topshelf/templates/signup.html" />
-        <option value="$PROJECT_DIR$/topshelf/api/__init__.py" />
         <option value="$PROJECT_DIR$/test_loop.txt" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/topshelf/static/css/main.css" />
@@ -130,35 +112,38 @@
         <option value="$PROJECT_DIR$/topshelf/templates/registration/registration_complete.html" />
         <option value="$PROJECT_DIR$/topshelf/templates/registration/registration_form.html" />
         <option value="$PROJECT_DIR$/topshelf/templates/autocomplete_light_registry.py" />
-        <option value="$PROJECT_DIR$/topshelf/templates/pantry.html" />
-        <option value="$PROJECT_DIR$/topshelf/templates/index.html" />
         <option value="$PROJECT_DIR$/topshelf/management/commands/diet_import.py" />
-        <option value="$PROJECT_DIR$/topshelf/api/authorization.py" />
         <option value="C:/Python27/Lib/site-packages/tastypie/authorization.py" />
         <option value="$PROJECT_DIR$/topshelf/templates/about.html" />
         <option value="$PROJECT_DIR$/topshelf/static/js/controllers/recipeCtrl.js" />
-        <option value="$PROJECT_DIR$/topshelf/static/js/app.js" />
-        <option value="$PROJECT_DIR$/topshelf/templates/base.html" />
-        <option value="$PROJECT_DIR$/topshelf/static/views/recipe.html" />
-        <option value="$PROJECT_DIR$/topshelf_main/urls.py" />
         <option value="$PROJECT_DIR$/topshelf/management/commands/ingred_import.py" />
-        <option value="$PROJECT_DIR$/topshelf/admin.py" />
-        <option value="$PROJECT_DIR$/topshelf/templates/recipe.html" />
         <option value="$PROJECT_DIR$/topshelf/management/commands/ingred_imports2.py" />
-        <option value="$PROJECT_DIR$/topshelf/models.py" />
         <option value="$PROJECT_DIR$/topshelf_main/settings.py" />
+        <option value="$PROJECT_DIR$/topshelf/api/authorization.py" />
+        <option value="$PROJECT_DIR$/topshelf/templates/pantry.html" />
+        <option value="C:/Python27/Lib/site-packages/django/forms/models.py" />
+        <option value="$PROJECT_DIR$/topshelf/templates/recipe.html" />
         <option value="$PROJECT_DIR$/topshelf/forms.py" />
+        <option value="$PROJECT_DIR$/topshelf/static/js/app.js" />
         <option value="$PROJECT_DIR$/Code_to_keep" />
-        <option value="$PROJECT_DIR$/topshelf/static/js/controllers/recipe.js" />
-        <option value="$PROJECT_DIR$/topshelf/views.py" />
-        <option value="$PROJECT_DIR$/topshelf/api/resources.py" />
         <option value="$PROJECT_DIR$/topshelf/static/views/pantry.html" />
         <option value="$PROJECT_DIR$/topshelf/static/js/controllers/pantry.js" />
+        <option value="$PROJECT_DIR$/topshelf/static/css/index.css" />
+        <option value="$PROJECT_DIR$/topshelf/templates/index.html" />
+        <option value="$PROJECT_DIR$/topshelf/views.py" />
+        <option value="$PROJECT_DIR$/topshelf/admin.py" />
+        <option value="$PROJECT_DIR$/topshelf_main/urls.py" />
+        <option value="$PROJECT_DIR$/topshelf/models.py" />
+        <option value="$PROJECT_DIR$/topshelf/api/resources.py" />
+        <option value="$PROJECT_DIR$/topshelf/templates/base.html" />
+        <option value="$PROJECT_DIR$/topshelf/static/views/recipe.html" />
+        <option value="$PROJECT_DIR$/topshelf/static/js/controllers/recipe.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-6" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="784" />
   </component>
@@ -355,7 +340,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="management" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="topshelf_main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="topshelf_main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="topshelf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -387,7 +402,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exercises/tdd_django" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="SearchEverywhereHistory" value="]" />
@@ -407,11 +422,11 @@
       <recent name="C:\Users\zhilabug\Documents\topshelf_main\topshelf\static\JS\vendor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zhilabug\Documents\topshelf_main\topshelf\static\media" />
+      <recent name="C:\Users\zhilabug\Documents\topshelf_main\topshelf\static\css" />
+      <recent name="C:\Users\zhilabug\Documents\topshelf_main\topshelf\static\js\bootstrap" />
       <recent name="C:\Users\zhilabug\Documents\topshelf_main\topshelf" />
       <recent name="C:\Users\zhilabug\Documents\topshelf_main\topshelf\templates" />
-      <recent name="C:\Users\zhilabug\Documents\topshelf_main\topshelf\static\templates" />
-      <recent name="C:\Users\zhilabug\Documents\topshelf_main\topshelf\static" />
-      <recent name="C:\Users\zhilabug\Documents\topshelf_main\topshelf\static\js\views" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.topshelf_main">
@@ -649,27 +664,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="1382" height="784" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22734027" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16032211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18740849" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39524516" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17979197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -677,7 +692,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22734027" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -686,10 +701,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16032211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18740849" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39524516" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17979197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -711,66 +726,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/standardSchemas/xhtml1-transitional.dtd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="936" column="2" selection-start="25244" selection-end="25244" vertical-scroll-proportion="0.3541147" vertical-offset="15770" max-vertical-offset="20723" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="25" selection-start="111" selection-end="111" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="340" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/registration/activate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="60" selection-end="60" vertical-scroll-proportion="0.1095008" vertical-offset="0" max-vertical-offset="621" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/registration/activation_complete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="621" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="621" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/registration/logout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="621" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/registration/password_change_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="621" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/registration/password_reset_confirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="621" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/registration/password_change_done.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="621" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/registration/password_reset_done.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="621" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/registration/registration_closed.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/topshelf/templates/registration/registration_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600" />
@@ -794,20 +749,6 @@
     <entry file="file://$PROJECT_DIR$/topshelf/templates/registration/password_reset_complete.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="621" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/favorite.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="16" selection-start="97" selection-end="97" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="204">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0273752" vertical-offset="0" max-vertical-offset="621">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/topshelf/management/commands/diet_import.py">
@@ -835,35 +776,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="389" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/pantry.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="0" selection-end="487" vertical-scroll-proportion="0.4380032" vertical-offset="0" max-vertical-offset="621">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/topshelf/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="146" selection-start="724" selection-end="724" vertical-scroll-proportion="0.4857143" vertical-offset="0" max-vertical-offset="350">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/static/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="72" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="867" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="1444" selection-end="1444" vertical-scroll-proportion="-5.8846154" vertical-offset="357" max-vertical-offset="1122">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="33" selection-start="171" selection-end="171" vertical-scroll-proportion="0.17847769" vertical-offset="0" max-vertical-offset="381" />
+        <state line="10" column="146" selection-start="724" selection-end="724" vertical-scroll-proportion="0.4857143" vertical-offset="0" max-vertical-offset="350" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/topshelf/wsgi.py">
@@ -871,157 +786,232 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="381" />
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/web-forms.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="16" selection-start="2544" selection-end="2544" vertical-scroll-proportion="0.33333334" vertical-offset="1794" max-vertical-offset="10132" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/topshelf/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="34" selection-start="883" selection-end="883" vertical-scroll-proportion="0.83152175" vertical-offset="0" max-vertical-offset="1870" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/recipeDetail.html">
+    <entry file="file://$PROJECT_DIR$/topshelf/management/commands/ingred_imports2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="16" selection-start="101" selection-end="101" vertical-scroll-proportion="-0.06760564" vertical-offset="58" max-vertical-offset="425">
+        <state line="8" column="23" selection-start="219" selection-end="219" vertical-scroll-proportion="0.35695538" vertical-offset="0" max-vertical-offset="527" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="13" selection-start="1126" selection-end="1132" vertical-scroll-proportion="-28.580053" vertical-offset="11382" max-vertical-offset="86683" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/tastypie/fields.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="697" column="21" selection-start="25850" selection-end="25854" vertical-scroll-proportion="0.33236152" vertical-offset="11565" max-vertical-offset="15249" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/management/commands/ingred_import.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="359" selection-end="359" vertical-scroll-proportion="0.029891305" vertical-offset="142" max-vertical-offset="510" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/difflib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="0" selection-start="4513" selection-end="4513" vertical-scroll-proportion="0.0" vertical-offset="1887" max-vertical-offset="35071" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/api/authentication.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="626" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/migrations/0006_auto__del_field_ingredmaster_test_ing__add_field_ingredmaster_test_ing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="24" selection-end="24" vertical-scroll-proportion="0.027732464" vertical-offset="0" max-vertical-offset="1632" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/migrations/0007_auto__chg_field_ingredmaster_test_ing_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/migrations/0008_auto__chg_field_ingredmaster_test_ing_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="84" selection-start="370" selection-end="370" vertical-scroll-proportion="0.24132492" vertical-offset="0" max-vertical-offset="1462" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="895" selection-end="895" vertical-scroll-proportion="0.33226836" vertical-offset="880" max-vertical-offset="15929" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/django/http/request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.9596542" vertical-offset="680" max-vertical-offset="8908" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/django/forms/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1062" column="66" selection-start="45489" selection-end="45489" vertical-scroll-proportion="0.36666667" vertical-offset="17667" max-vertical-offset="20774" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/django/forms/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="13" selection-start="4147" selection-end="4201" vertical-scroll-proportion="0.33333334" vertical-offset="1325" max-vertical-offset="9792" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.10761155" vertical-offset="588" max-vertical-offset="969" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/migrations/0011_auto__chg_field_useringred_selected_item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1479" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/migrations/0013_auto__del_field_apiparams_user_info__add_field_apiparams_user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code_to_keep">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="133" selection-start="832" selection-end="949" vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="1173" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="513" column="23" selection-start="11764" selection-end="11764" vertical-scroll-proportion="0.33230293" vertical-offset="8506" max-vertical-offset="10132">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/management/commands/ingred_imports2.py">
+    <entry file="file://C:/Python27/Lib/site-packages/django/db/models/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="23" selection-start="219" selection-end="219" vertical-scroll-proportion="0.35695538" vertical-offset="0" max-vertical-offset="527">
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="17" column="14" selection-start="909" selection-end="909" vertical-scroll-proportion="0.7585302" vertical-offset="0" max-vertical-offset="663" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/migrations/0014_auto__chg_field_ingredmaster_test_ing_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1615" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/topshelf_main/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.33333334" vertical-offset="638" max-vertical-offset="1836">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/templates/recipe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="31" selection-start="230" selection-end="230" vertical-scroll-proportion="0.3774648" vertical-offset="2" max-vertical-offset="357">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/static/views/recipe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="27" selection-start="456" selection-end="456" vertical-scroll-proportion="0.43098593" vertical-offset="0" max-vertical-offset="357">
+        <state line="66" column="1" selection-start="1701" selection-end="1701" vertical-scroll-proportion="0.0" vertical-offset="986" max-vertical-offset="1836">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/topshelf/api/authorization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="39" selection-start="293" selection-end="293" vertical-scroll-proportion="0.26771653" vertical-offset="17" max-vertical-offset="680">
-          <folding />
-        </state>
+        <state line="12" column="42" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/api/authentication.py">
+    <entry file="file://$PROJECT_DIR$/topshelf/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <folding />
-        </state>
+        <state line="55" column="132" selection-start="2798" selection-end="2798" vertical-scroll-proportion="0.6644737" vertical-offset="531" max-vertical-offset="1139" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/__builtin__.py">
+    <entry file="file://$PROJECT_DIR$/topshelf/static/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="13" selection-start="1126" selection-end="1132" vertical-scroll-proportion="-28.580053" vertical-offset="11382" max-vertical-offset="86683">
-          <folding />
-        </state>
+        <state line="63" column="0" selection-start="1636" selection-end="1636" vertical-scroll-proportion="0.26275116" vertical-offset="901" max-vertical-offset="4148" />
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/difflib.py">
+    <entry file="file://$PROJECT_DIR$/topshelf/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="817" column="0" selection-start="32295" selection-end="32295" vertical-scroll-proportion="0.34157652" vertical-offset="13634" max-vertical-offset="35071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code_to_keep">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="29" selection-start="681" selection-end="681" vertical-scroll-proportion="0.2429022" vertical-offset="67" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.47449768" vertical-offset="271" max-vertical-offset="918">
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf_main/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="32" selection-start="1845" selection-end="1845" vertical-scroll-proportion="0.44822258" vertical-offset="203" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="38" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/static/views/pantry.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="54" selection-start="806" selection-end="806" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/static/js/controllers/pantry.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="43" selection-start="706" selection-end="706" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/static/js/controllers/recipe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="17" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+        <state line="7" column="25" selection-start="300" selection-end="300" vertical-scroll-proportion="0.1576507" vertical-offset="0" max-vertical-offset="647">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/topshelf/api/resources.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="78" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="1326">
+        <state line="25" column="39" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.089644514" vertical-offset="367" max-vertical-offset="1802">
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="43" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.35548687" vertical-offset="365" max-vertical-offset="1054">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topshelf/management/commands/ingred_import.py">
+    <entry file="file://$PROJECT_DIR$/topshelf_main/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+        <state line="14" column="36" selection-start="520" selection-end="520" vertical-scroll-proportion="0.04018547" vertical-offset="93" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/static/views/pantry.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="33" selection-start="760" selection-end="760" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="4" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/static/js/controllers/pantry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="29" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/templates/recipe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="276" selection-end="276" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="459">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="23" selection-start="3392" selection-end="3392" vertical-scroll-proportion="0.33230293" vertical-offset="2029" max-vertical-offset="8228">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="24" selection-start="265" selection-end="265" vertical-scroll-proportion="0.19162641" vertical-offset="0" max-vertical-offset="1105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/templates/recipeDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="49" selection-start="567" selection-end="567" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="425">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/topshelf/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="48" selection-start="4026" selection-end="4026" vertical-scroll-proportion="0.7050473" vertical-offset="964" max-vertical-offset="1598">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#491#526#0" expanded="false" />
-            <element signature="e#552#588#0" expanded="false" />
-            <element signature="e#682#1078#0" expanded="false" />
-            <element signature="e#1175#1655#0" expanded="false" />
-            <marker date="1395275296379" expanded="true" signature="2835:3644" placeholder="..." />
-          </folding>
+        <state line="70" column="121" selection-start="2379" selection-end="2472" vertical-scroll-proportion="0.0" vertical-offset="605" max-vertical-offset="1513">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/static/views/recipe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="44" selection-start="986" selection-end="986" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topshelf/static/js/controllers/recipe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="1" selection-start="577" selection-end="577" vertical-scroll-proportion="0.4729521" vertical-offset="0" max-vertical-offset="647">
+          <folding />
         </state>
       </provider>
     </entry>

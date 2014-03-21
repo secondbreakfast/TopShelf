@@ -5,7 +5,8 @@ from tastypie.bundle import Bundle
 from tastypie.fields import ToManyField, CharField, ToOneField
 from tastypie.resources import ModelResource, Resource
 from topshelf.api.authorization import UserObjectsOnlyAuthorization
-from topshelf.models import IngredMaster, UserIngred, UserRecipe, IngredMaster_test
+from topshelf.models import IngredMaster, UserIngred, UserRecipe, IngredMaster_test, UserApiParams, SearchParams
+
 
 # # Limit post, delete, etc to only the admin?
 # class MasterIngredientResource(ModelResource):
@@ -27,7 +28,7 @@ class MasterIngredientResource(ModelResource):
 
 
 class UserIngredResource(ModelResource):
-    ing_master= ToOneField(MasterIngredientResource, "ing_master", full=False)
+    ing_master= ToOneField(MasterIngredientResource, "ing_master", full=True)
 
     class Meta:
         queryset = UserIngred.objects.all().order_by('ing_master')
@@ -36,14 +37,34 @@ class UserIngredResource(ModelResource):
         authentication = BasicAuthentication()
 
 
+class SearchParamsResource(ModelResource):
+    search_choice = ToOneField(UserIngredResource, "ing_master", full=True, null=True)
+
+    class Meta:
+        queryset = SearchParams.objects.all()
+        resource_name = "search_params"
+        authorization = UserObjectsOnlyAuthorization()
+        authentication = BasicAuthentication()
+
+
 class UserRecipeResource(ModelResource):
-    ingred = ToManyField(MasterIngredientResource, "ingred", null=True)
+    ingred = ToManyField(MasterIngredientResource, "ingred", full=True, null=True)
 
     class Meta:
         queryset = UserRecipe.objects.all()
         resource_name = "user_favorites"
         authorization = UserObjectsOnlyAuthorization()
         authentication = BasicAuthentication()
+
+
+class ApiParamsResource(ModelResource):
+    class Meta:
+        queryset = UserApiParams.objects.all()
+        resource_name = "api_params"
+        authorization = UserObjectsOnlyAuthorization()
+        authentication = BasicAuthentication()
+
+
 
 ######################
 # Non-Model Resource #

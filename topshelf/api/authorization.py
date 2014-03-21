@@ -3,6 +3,7 @@ from tastypie.exceptions import Unauthorized
 
 
 class UserObjectsOnlyAuthorization(Authorization):
+    # Deletes allowed for user's own data.
     def read_list(self, object_list, bundle):
         return object_list.filter(user=bundle.request.user)
 
@@ -28,9 +29,3 @@ class UserObjectsOnlyAuthorization(Authorization):
 
     def update_detail(self, object_list, bundle):
         return bundle.obj.user == bundle.request.user
-
-    def delete_list(self, object_list, bundle):
-        raise Unauthorized("Sorry, no deletes.")
-
-    def delete_detail(self, object_list, bundle):
-        raise Unauthorized("Sorry, no deletes.")

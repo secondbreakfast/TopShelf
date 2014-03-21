@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 
 {% block title %}Recipes{% endblock %}
-
 {% block main %}
+<div class="header"><h3>What can I make with?</h3></div>
+<form method="post">
+    {% csrf_token  %}
+    Ingredient: {{ form.ing_master }}<br>
+    <input type="submit" value="Add Ingredient" />
+
+</form>
 {#    {% for stuff in match %}#}
 {#    <ul>{{ stuff.recipeName }}#}
 {#    <li>{{ stuff.sourceDisplayName }}</li>#}
@@ -11,6 +17,5 @@
 {#    </ul>#}
 {#    {% endfor %}#}
 
-test: {{ match }}
-
+{#test: {{ match }}#}
 {% endblock %}

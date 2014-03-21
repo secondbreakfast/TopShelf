@@ -1,19 +1,26 @@
- <div class='container-fluid'>
-    <div> Need to add a list of inventory items, that can be deleted with a click. </div>
+<div class='container-fluid'>
     <div id="form"><form ng-submit="submitForm()" >
         <h4>Stock Your Pantry</h4>
+        <div>
         Add an ingredient: <input type="text" ng-model="pantry.ing_master" typeahead="item.resource_uri as item.ing_test for item in list_items | filter:$viewValue | limitTo:30" class="form-control">
+        </div>
         <br>
-        <div>
-        Purchase date: <input type="text" ng-model="pantry.purch_date">
-        </div>
-        <div>
-        Quantity: <input type="text" ng-model="pantry.quantity">
-        </div>
         <input type="submit" value="Add Ingredient">
     </form></div>
-     <div id="user_pantry_list" ng-repeat="item in pantry_data">
-        <div class="foodButtons" ng-click="deleteItem({{ item.resource_uri }})">{{ item.ing_master }}</div>
+    <div id="recipeSearchForm"><form ng-submit="recipeSearchForm()" >
+        <h4>Setup your recipe search</h4>
+        <h5>Pick 3 ingredients to use up:</h5>
+        <em>Search results will display only recipes that use all three ingredients.</em><br>
+        </h4>
+        What can I make with:
+        <select ng-model="queryParams.choice1" ng-options="item.ing_master.ing_test for item in pantry_data"></select> &
+        <select ng-model="queryParams.choice2" ng-options="item.ing_master.ing_test for item in pantry_data"></select> &
+        <select ng-model="queryParams.choice3" ng-options="item.ing_master.ing_test for item in pantry_data"></select>?<br>
+        <!-- Add other values. Diet, items to exclude. -->
+        <input type="submit" value="Save choices">
+    </form></div>
+     <div id="userPantryList" ng-repeat="item in pantry_data">
+        <div class="foodButtons" ng-click="deleteItem({{ item.resource_uri }})">{{ item.ing_master.ing_test }}</div>
      </div>
 
 </div>

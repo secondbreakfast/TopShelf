@@ -35,7 +35,30 @@ Original match for ingredients and recipes. Changed this later to improve result
 #        data = {"match": match, "ingred": ingred}
 #
 #     return render(request, "recipe.html", data)
+
 #
-#     # data = {"match": ingred}
-#     # return render(request, "recipe.html", data)
-#
+
+For pantry view:
+{#        <div>#}
+{#        Purchase date: <input type="text" ng-model="pantry.purch_date">#}
+{#        </div>#}
+{#        <div>#}
+{#        Quantity: <input type="text" ng-model="pantry.quantity">#}
+{#        </div>#}
+
+
+
+
+# def pantry(request, user_id):
+#     if request.method=="POST":
+#         form = IngredForm(request.POST)
+#         if form.is_valid():
+#             if form.save():
+#                 return redirect("{}/pantry/".format(user_id))
+#     else:
+#         form = IngredForm()
+#     data = {'form': form}
+#     return render(request, "pantry.html", data)
+
+# Test view. Don't want to mess up the original.
+# Need to let user pick 3 ingredients for API call. Add this functionality later, if needed.

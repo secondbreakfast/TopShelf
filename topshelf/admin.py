@@ -1,7 +1,9 @@
 from django.contrib import admin
-from topshelf.models import IngredMaster, UserIngred, IngredMaster_test
+from topshelf.models import IngredMaster, UserIngred, IngredMaster_test, UserApiParams, SearchParams
 
 admin.site.register(UserIngred)
 admin.site.register(IngredMaster)
 admin.site.register(IngredMaster_test)
+admin.site.register(UserApiParams)
+admin.site.register(SearchParams)
 
