@@ -53,13 +53,10 @@ def login_page(request):
 
 # Note: look up model_to_dict for re-importing data, or make another element that stores "contains" info from the new list.
 def recipe(request, user_id):
-    # api_params = requests.get('http://127.0.0.1:8000/api/v1/api_params/?format=json')
-    # api_params = api_params.json()
-    # choice1 = api_params['choice1']
-    # choice2 = api_params['choice2']
-    # choice3 = api_params['choice3']
-    #
-
+    api_params = request.GET.get('queryParams')
+    # choice1 = api_params.first.ing_master.ing_test
+    # choice2 = api_params.second.ing_master.ing_test
+    # choice3 = api_params.third.ing_master.ing_test
     # # Empty list to add ingredients from the user's pantry.
     ingred = []
     user_test = UserIngred.objects.filter(user=request.user)
@@ -68,7 +65,9 @@ def recipe(request, user_id):
 
     # Sample output for ingred below.
     # ingred = ["kale", "lemon juice", "tomatoes", "garlic cloves", "butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
-    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&maxResult=500')
+    # recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&allowedIngredient[]={0}&allowedIngredient[]={1}&allowedIngredient[]={2}&maxResult=500'.format(choice1, choice2, choice3))
+
+    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&allowedIngredient[]={0}&maxResult=500'.format(api_params))
     recipes = recipes.json()
 
     ingred.sort()

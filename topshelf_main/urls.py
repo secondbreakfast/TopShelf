@@ -35,7 +35,8 @@ urlpatterns = patterns('',
 # For main site pages-- these may be phased out depending on Angular. For now, I have both.
 # Need to convert test URL to regular URL.
 #     url(r'^about/', 'topshelf.views.about', name='about'),
-    url(r'^(?P<user_id>\w+)/recipe_test/$', 'topshelf.views.recipe', name='recipe_test'),
+    url(r'^(?P<user_id>\w+)/recipe/$', 'topshelf.views.recipe', name='recipe'),
+    url(r'^(?P<user_id>\w+)/recipe/$', 'topshelf.views.recipe', name='recipe'),
     url(r'^(?P<user_id>\w+)/recipe_detail/$', 'topshelf.views.recipe_detail', name='recipe_detail'),
 
 # For API and Angular

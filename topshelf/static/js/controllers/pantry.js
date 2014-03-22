@@ -1,4 +1,5 @@
-function PantryCtrl($scope, $http, $location) {
+function PantryCtrl($scope, $http, $location, foodChoices) {
+  $scope.queryParams = foodChoices.sharedObject;
 //    Gets the full list of ingredients, which the user can add to their pantry.
   $scope.pantry = undefined;
   $http.get('/api/v1/all_ingredients/?format=json&limit=0').
@@ -48,13 +49,10 @@ function PantryCtrl($scope, $http, $location) {
     }
 
     //Sends the user's preferences to an API, which will be called in the recipe search.
-    //Use angular to json to generate a new patch.
-  $scope.recipeSearchForm = function() {
-      $http.patch('/api/v1/api_params/?format=json', $scope.queryParams).
-            success(function(response){
-                console.log($scope.queryParams);
-                $location.path("/:id/pantry/");
-        })
-  }
+  $scope.recipeSearchForm = function(queryParams) {
+        $http.get('/1/recipe/?queryParams='+queryParams.first.ing_master.ing_test).
+            success(function(data) {
+                console.log(queryParams.first.ing_master.ing_test);
+        });
+      }
 }
-

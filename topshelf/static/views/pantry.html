@@ -1,4 +1,16 @@
 <div class='container-fluid'>
+    <div id="recipeSearchForm"><form ng-submit="recipeSearchForm(queryParams)" >
+        <h4>Setup your recipe search</h4>
+        <h5>Pick 3 ingredients to use up:</h5>
+        <em>Search results will display only recipes that use all three ingredients.</em><br>
+        </h4>
+        What can I make with:
+        <select ng-model="queryParams.first" ng-options="item.ing_master.ing_test for item in pantry_data"></select> &
+        <select ng-model="queryParams.second" ng-options="item.ing_master.ing_test for item in pantry_data"></select> &
+        <select ng-model="queryParams.third" ng-options="item.ing_master.ing_test for item in pantry_data"></select>?
+        <!-- Add other values. Diet, items to exclude. -->
+        <input type="submit" value="Save choices">
+    </form></div>
     <div id="form"><form ng-submit="submitForm()" >
         <h4>Stock Your Pantry</h4>
         <div>
@@ -7,20 +19,9 @@
         <br>
         <input type="submit" value="Add Ingredient">
     </form></div>
-    <div id="recipeSearchForm"><form ng-submit="recipeSearchForm()" >
-        <h4>Setup your recipe search</h4>
-        <h5>Pick 3 ingredients to use up:</h5>
-        <em>Search results will display only recipes that use all three ingredients.</em><br>
-        </h4>
-        What can I make with:
-        <select ng-model="queryParams.choice1" ng-options="item.ing_master.ing_test for item in pantry_data"></select> &
-        <select ng-model="queryParams.choice2" ng-options="item.ing_master.ing_test for item in pantry_data"></select> &
-        <select ng-model="queryParams.choice3" ng-options="item.ing_master.ing_test for item in pantry_data"></select>?<br>
-        <!-- Add other values. Diet, items to exclude. -->
-        <input type="submit" value="Save choices">
-    </form></div>
-     <div id="userPantryList" ng-repeat="item in pantry_data">
+
+    <!-- <div id="userPantryList" ng-repeat="item in pantry_data">
         <div class="foodButtons" ng-click="deleteItem({{ item.resource_uri }})">{{ item.ing_master.ing_test }}</div>
-     </div>
+     </div> -->
 
 </div>
