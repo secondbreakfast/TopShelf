@@ -45,33 +45,37 @@ def login_page(request):
                                 password=form.cleaned_data['password'],)
             if user is not None:
                 login(request, user)
-                return redirect("/{}/pantry".format(user.id))
+                return redirect("/app/#/{}/pantry".format(user.id))
     else:
         form = LoginForm
     data = {"form": form}
     return render(request, "signup.html", data)
 
-# Note: look up model_to_dict for re-importing data, or make another element that stores "contains" info from the new list.
+# Gets the user's preferences from pantry.js (passed as a search parameter) and uses it in the Yummly web API search.
 def recipe(request, user_id):
     api_params = request.GET.get('queryParams')
-    # choice1 = api_params.first.ing_master.ing_test
-    # choice2 = api_params.second.ing_master.ing_test
-    # choice3 = api_params.third.ing_master.ing_test
-    # # Empty list to add ingredients from the user's pantry.
+    # Sample API search params, defined by the user:
+    # &allowedIngredient[]=almonds&allowedIngredient[]=flour&allowedIngredient[]=soymilk
+
+    # Pull ingredients from the user's pantry into a list, for comparision with recipe ingredients.
     ingred = []
     user_test = UserIngred.objects.filter(user=request.user)
     for item in user_test:
         ingred.append(item.ing_master.ing_test)
 
-    # Sample output for ingred below.
+    # Sample output for user ingredients list below.
     # ingred = ["kale", "lemon juice", "tomatoes", "garlic cloves", "butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
-    # recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&allowedIngredient[]={0}&allowedIngredient[]={1}&allowedIngredient[]={2}&maxResult=500'.format(choice1, choice2, choice3))
 
-    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&allowedIngredient[]={0}&maxResult=500'.format(api_params))
+    # API call pulls 500 recipes to filter through. This number will change as the data gets normalized, and more efficient.
+    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83'+api_params+'&maxResult=500')
     recipes = recipes.json()
 
+    # Sorts ingredients by alpha order. Not sure if this actually helps the matching go faster, but it may.
     ingred.sort()
 
+    # This section compares the text in the user's ingredients record with each recipe's set of ingredients.
+    # It's not great, but is a quick way to get some results. This will change substantially as the data gets normalized.
+    # Right now, this just uses a library (DiffLib) to compare text and assigns a similarity ratio. Not great, but ok.
     match = []
     for item in recipes['matches']:
         match_ratio = difflib.SequenceMatcher(None, ingred, item['ingredients'], autojunk=True).ratio()
@@ -85,6 +89,7 @@ def recipe(request, user_id):
                 match.insert(-1, item)
     return HttpResponse(json.dumps(match),content_type='application/json')
 
+# Searches for individual recipe detail. This only fires when a user clicks on a recipe record at recipe.html
 def recipe_detail(request, user_id):
     recipe_id = request.GET.get('recipe_id')
     resp = requests.get("http://api.yummly.com/v1/api/recipe/{0}?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83".format(recipe_id))

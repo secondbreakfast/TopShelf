@@ -1,31 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Signup</title>
-</head>
-<body>
+{% extends "index.html" %}
+{% load staticfiles %}
+
+{% block indexOptions %}
 <form method="post">
 {#    Wraps each form item in a p tag. Or you can loop over every field in the form. Or add errors. #}
     {% csrf_token  %}
+    {{ form.username }}<br>
+    {{ form.password }}<br>
+    {{ form.email }}<br>
 
-{#One kind of view#}
-{#    {{ form.username }}#}
-{#    {{ form.password }}#}
-{#    {{ form.email }}#}
-
-{#    Another kind of view#}
-{#    {% for field in form %}#}
-{#    <div>#}
-{#        <label>{{ field.label }}</label>#}
-{#        {{ field }}#}
-{#        {{ field.errors }}#}
-{#        </div>#}
-{#    {% endfor %}#}
-
-{#    Simplest view. Not great for actual use, but ok for prototyping. #}
-     {{ form.as_p }}
     <input type="submit" value="Sign up" />
 
 </form>
-</body>
-</html>
+
+{% endblock %}

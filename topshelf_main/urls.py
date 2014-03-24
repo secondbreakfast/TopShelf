@@ -32,12 +32,10 @@ urlpatterns = patterns('',
                 name='password_reset_confirm'),
     url(r'accounts/', include('registration.backends.default.urls')),
 
-# For main site pages-- these may be phased out depending on Angular. For now, I have both.
-# Need to convert test URL to regular URL.
+# The recipe data pages are basically just angular data dumps.
 #     url(r'^about/', 'topshelf.views.about', name='about'),
-    url(r'^(?P<user_id>\w+)/recipe/$', 'topshelf.views.recipe', name='recipe'),
-    url(r'^(?P<user_id>\w+)/recipe/$', 'topshelf.views.recipe', name='recipe'),
-    url(r'^(?P<user_id>\w+)/recipe_detail/$', 'topshelf.views.recipe_detail', name='recipe_detail'),
+    url(r'^(?P<user_id>\w+)/recipe_data/$', 'topshelf.views.recipe', name='recipe_data'),
+    url(r'^(?P<user_id>\w+)/recipe_detail_data/$', 'topshelf.views.recipe_detail', name='recipe_detail_data'),
 
 # For API and Angular
     url(r'^api/', include(v1_api.urls)),
