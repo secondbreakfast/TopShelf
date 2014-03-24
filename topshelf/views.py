@@ -17,9 +17,9 @@ def index(request):
 def angular(request):
     return render(request, 'base.html')
 
-#
-# def about(request):
-#     return render(request, "about.html")
+
+def about(request):
+    return render(request, "about.html")
 
 def signup(request):
     if request.method =="POST":
@@ -67,15 +67,13 @@ def recipe(request, user_id):
     # ingred = ["kale", "lemon juice", "tomatoes", "garlic cloves", "butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
 
     # API call pulls 500 recipes to filter through. This number will change as the data gets normalized, and more efficient.
-    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83'+api_params+'&maxResult=500')
+    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&maxResult=500{0}'.format(api_params))
     recipes = recipes.json()
-
-    # Sorts ingredients by alpha order. Not sure if this actually helps the matching go faster, but it may.
-    ingred.sort()
 
     # This section compares the text in the user's ingredients record with each recipe's set of ingredients.
     # It's not great, but is a quick way to get some results. This will change substantially as the data gets normalized.
     # Right now, this just uses a library (DiffLib) to compare text and assigns a similarity ratio. Not great, but ok.
+    ingred.sort()
     match = []
     for item in recipes['matches']:
         match_ratio = difflib.SequenceMatcher(None, ingred, item['ingredients'], autojunk=True).ratio()

@@ -1,10 +1,10 @@
-{% load staticfiles %}
-
 .jumbotron {
   background-size: cover;
-  background-image: url("/topshelf/static/media/foodbackground_home.jpg");
+  background-image: url('/topshelf/static/images/foodbackground_home.jpg');
+
   width: 100%;
   }
+
 
   /* Wrapper for page content to push down footer */
   #wrap {

@@ -1,5 +1,5 @@
 <div class='container-fluid'>
-    <div id="recipeSearchForm"><form ng-submit="recipeSearchForm(queryParams)" >
+    <div id="recipeSearchForm"><form ng-submit="recipeSearchForm(queryParams, id)" >
         <h4>Setup your recipe search</h4>
         <h5>Pick 3 ingredients to use up:</h5>
         <em>Search results will display only recipes that use all three ingredients.</em><br>
@@ -9,7 +9,7 @@
         <select ng-model="queryParams.second" ng-options="item.ing_master.ing_test for item in pantry_data"></select> &
         <select ng-model="queryParams.third" ng-options="item.ing_master.ing_test for item in pantry_data"></select>?
         <!-- Add other values. Diet, items to exclude. -->
-        <a href="#/:id/recipe/"><input type="submit" value="Start your search"></a>
+        <a href="#/{{ id }}/recipe/"><input type="submit" value="Start your search"></a>
     </form></div>
     <div id="form"><form ng-submit="submitForm()" >
         <h4>Stock Your Pantry</h4>

@@ -1,3 +1,4 @@
+from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.conf.urls import patterns, url, include
 
@@ -6,6 +7,8 @@ from topshelf.api.resources import UserIngredResource, UserRecipeResource, Maste
     SearchParamsResource
 
 from django.contrib import admin
+from topshelf_main import settings
+
 admin.autodiscover()
 
 v1_api = Api(api_name="v1")
@@ -32,8 +35,9 @@ urlpatterns = patterns('',
                 name='password_reset_confirm'),
     url(r'accounts/', include('registration.backends.default.urls')),
 
+
 # The recipe data pages are basically just angular data dumps.
-#     url(r'^about/', 'topshelf.views.about', name='about'),
+    url(r'^about/', 'topshelf.views.about', name='about'),
     url(r'^(?P<user_id>\w+)/recipe_data/$', 'topshelf.views.recipe', name='recipe_data'),
     url(r'^(?P<user_id>\w+)/recipe_detail_data/$', 'topshelf.views.recipe_detail', name='recipe_detail_data'),
 
