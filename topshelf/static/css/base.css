@@ -1,5 +1,22 @@
-#topshelf {
+.topshelf {
     font-family: 'Dosis', sans-serif;
     font-weight: 500;
     color: #9e0a3a;
+}
+
+body {
+    color: #411e0f;
+}
+
+#form {
+float:left;
+width:30%;
+overflow:hidden;
+}
+
+
+#userPantryList {
+float:right;
+width:65%;
+overflow:hidden;
 }

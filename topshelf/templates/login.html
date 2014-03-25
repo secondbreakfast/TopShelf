@@ -1,7 +1,7 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% load staticfiles %}
 
-{% block indexOptions %}
+{% block main %}
     <div id="login_content">
         <form method="post">
             {% csrf_token  %}
@@ -13,3 +13,20 @@
     </div>
 
 {% endblock %}
+{##}
+{##}
+{#{% extends "index.html" %}#}
+{#{% load staticfiles %}#}
+{##}
+{#{% block indexOptions %}#}
+{#    <div id="login_content">#}
+{#        <form method="post">#}
+{#            {% csrf_token  %}#}
+{#            {{ form.username }}<br>#}
+{#            {{ form.password }}#}
+{#            <input type="submit" value="Sign in" />#}
+{##}
+{#        </form>#}
+{#    </div>#}
+{##}
+{#{% endblock %}#}

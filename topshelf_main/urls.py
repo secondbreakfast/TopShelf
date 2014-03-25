@@ -3,8 +3,7 @@ from django.contrib.auth import views as auth_views
 from django.conf.urls import patterns, url, include
 
 from tastypie.api import Api
-from topshelf.api.resources import UserIngredResource, UserRecipeResource, MasterIngredientResource,ApiParamsResource, \
-    SearchParamsResource
+from topshelf.api.resources import UserIngredResource, UserRecipeResource, MasterIngredientResource
 
 from django.contrib import admin
 from topshelf_main import settings
@@ -15,8 +14,6 @@ v1_api = Api(api_name="v1")
 v1_api.register(MasterIngredientResource())
 v1_api.register(UserIngredResource())
 v1_api.register(UserRecipeResource())
-v1_api.register(ApiParamsResource())
-v1_api.register(SearchParamsResource())
 
 # Url's for authentication and accounts
 urlpatterns = patterns('',

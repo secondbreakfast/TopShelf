@@ -5,7 +5,7 @@ from tastypie.bundle import Bundle
 from tastypie.fields import ToManyField, CharField, ToOneField
 from tastypie.resources import ModelResource, Resource
 from topshelf.api.authorization import UserObjectsOnlyAuthorization
-from topshelf.models import IngredMaster, UserIngred, UserRecipe, IngredMaster_test, UserApiParams, SearchParams
+from topshelf.models import IngredMaster, UserIngred, UserRecipe, IngredMaster_test
 
 
 # # Limit post, delete, etc to only the admin?
@@ -37,16 +37,6 @@ class UserIngredResource(ModelResource):
         authentication = BasicAuthentication()
 
 
-class SearchParamsResource(ModelResource):
-    search_choice = ToOneField(UserIngredResource, "ing_master", full=True, null=True)
-
-    class Meta:
-        queryset = SearchParams.objects.all()
-        resource_name = "search_params"
-        authorization = UserObjectsOnlyAuthorization()
-        authentication = BasicAuthentication()
-
-
 class UserRecipeResource(ModelResource):
     ingred = ToManyField(MasterIngredientResource, "ingred", full=True, null=True)
 
@@ -56,13 +46,6 @@ class UserRecipeResource(ModelResource):
         authorization = UserObjectsOnlyAuthorization()
         authentication = BasicAuthentication()
 
-
-class ApiParamsResource(ModelResource):
-    class Meta:
-        queryset = UserApiParams.objects.all()
-        resource_name = "api_params"
-        authorization = UserObjectsOnlyAuthorization()
-        authentication = BasicAuthentication()
 
 
 

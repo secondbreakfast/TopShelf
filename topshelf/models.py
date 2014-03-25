@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
 from django.db import models
-# import datetime
 # the names Ing and Ingred are used for ingredients. Typing ingredients constantly is just tiring.
 
 # IngredMaster is a model with a ton of inconsistent data from the Yummly API.
@@ -30,22 +29,6 @@ class UserIngred(models.Model):
 
     def __unicode__(self):
         return self.ing_master.ing_test
-
-class UserApiParams(models.Model):
-    choice1 = models.CharField(max_length=50)
-    choice2 = models.CharField(max_length=50, blank=True)
-    choice3 = models.CharField(max_length=50, blank=True)
-    diet = models.CharField(max_length=50, blank=True)
-    user = models.ForeignKey(User)
-
-class SearchParams(models.Model):
-    food_param = models.ForeignKey(UserIngred, related_name = 'food_param')
-    diet = models.CharField(max_length=50, blank=True)
-    user = models.ForeignKey(User)
-
-    def __unicode__(self):
-        return self.food_param.ing_master.ing_test
-
 
 class UserRecipe(models.Model):
     recipe_name = models.CharField(max_length=100)

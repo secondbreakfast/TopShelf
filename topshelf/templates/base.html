@@ -25,7 +25,7 @@
 <body>
     <div id="header">
         {% block header %}
-            <h2 id="topshelf">TopShelf</h2>
+            <h3 class="topshelf">TopShelf</h3>
 	<a href="{% url 'index' %}">{% trans "Home" %}</a> |
 
 	{% if user.is_authenticated %}

@@ -1,10 +1,43 @@
-.jumbotron {
+#jumbotron {
   background-size: cover;
-  background-image: url('/topshelf/static/images/foodbackground_home.jpg');
-
+  background-image: url('../images/foodbackground_home.jpg');
+  height: 100%;
   width: 100%;
-  }
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  margin-bottom: 100px;
+}
 
+.topshelf {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 500;
+    color: #9e0a3a;
+}
+
+#cell {
+    display:table-cell;
+    vertical-align:middle;
+}
+.catchPhrase {
+    color: #411e0f;
+}
+
+#button-container {
+    max-width: 300px;
+    height: 60%;
+    background-image: url('../images/fabric_plaid_@2X.png');
+    position: fixed;
+    margin-top: 10%;
+    margin-left: 70%;
+    border-radius: 8px;
+    box-shadow: 6px;
+    border: 2px dashed #411e0f;
+    padding: 20px;
+    box-shadow:0px 0px 4px 8px #EBEBEB;
+    text-align: center;
+    padding-top: 120px;
+}
 
   /* Wrapper for page content to push down footer */
   #wrap {
@@ -15,13 +48,23 @@
   }
 
   /* Set the fixed height of the footer here */
-  #push,
+  /*#push,*/
+  /*#footer {*/
+    /*height: 60px;*/
+  /*}*/
   #footer {
+    background-image: url('../images/fabric_plaid_@2X.png');
+    color: #411e0f;
     height: 60px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
   }
-  #footer {
-    background-color: #f5f5f5;
-  }
+
+a {
+   color: #9e0a3a;
+}
 
   /* Lastly, apply responsive CSS fixes as necessary */
   @media (max-width: 767px) {

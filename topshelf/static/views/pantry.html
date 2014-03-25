@@ -11,17 +11,17 @@
         <!-- Add other values. Diet, items to exclude. -->
         <a href="#/{{ id }}/recipe/"><input type="submit" value="Start your search"></a>
     </form></div>
-    <div id="form"><form ng-submit="submitForm()" >
-        <h4>Stock Your Pantry</h4>
-        <div>
-        Add an ingredient: <input type="text" ng-model="pantry.ing_master" typeahead="item.resource_uri as item.ing_test for item in list_items | filter:$viewValue | limitTo:30" class="form-control">
+    <div id="columnContainer">
+        <div id="form"><form ng-submit="submitForm()" >
+            <h4>Stock Your Pantry</h4>
+            <div>
+                Add an ingredient: <input type="text" ng-model="pantry.ing_master" typeahead="item.resource_uri as item.ing_test for item in list_items | filter:$viewValue | limitTo:30" class="form-control">
+            </div>
+            <br>
+            <input type="submit" value="Add Ingredient">
+        </form></div>
+        <div id="userPantryList" ng-repeat="item in pantry_data">
+            <div class="foodButtons" ng-click="deleteItem(item)">{{ item.ing_master.ing_test }}</div>
         </div>
-        <br>
-        <input type="submit" value="Add Ingredient">
-    </form></div>
-
-    <div id="userPantryList" ng-repeat="item in pantry_data">
-        <div class="foodButtons" ng-click="deleteItem(item)">{{ item.ing_master.ing_test }}</div>
-     </div>
-
+    </div>
 </div>
