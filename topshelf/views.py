@@ -49,7 +49,7 @@ def login_page(request):
     else:
         form = LoginForm
     data = {"form": form}
-    return render(request, "signup.html", data)
+    return render(request, "login.html", data)
 
 # Gets the user's preferences from pantry.js (passed as a search parameter) and uses it in the Yummly web API search.
 def recipe(request, user_id):

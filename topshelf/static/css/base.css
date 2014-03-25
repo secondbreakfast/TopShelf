@@ -1,22 +1,50 @@
+body {
+    color: #411e0f;
+    background-color: #ebebeb;
+    font-family: 'Junge', serif;
+}
+
 .topshelf {
     font-family: 'Dosis', sans-serif;
     font-weight: 500;
     color: #9e0a3a;
+    display: inline-block;
 }
 
-body {
-    color: #411e0f;
+
+#header {
+    position: absolute;
+    max-height: 80px;
+    width: 100%;
+    background-color: #7f9F81;
+    top: 0px;
+
 }
 
-#form {
-float:left;
-width:30%;
-overflow:hidden;
+#headerContent {
+    margin: 10px;
+    display: inline-block;
+
+}
+
+#login_logout {
+    display: inline-block;
+}
+
+#pantryForm {
+    float:left;
+    width:30%;
+    overflow:hidden;
+    text-align: center;
 }
 
 
 #userPantryList {
-float:right;
-width:65%;
-overflow:hidden;
+    float:right;
+    width:65%;
+    overflow:hidden;
+}
+
+#recipeSearchForm {
+    text-align: center;
 }

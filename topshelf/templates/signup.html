@@ -2,15 +2,16 @@
 {% load staticfiles %}
 
 {% block indexOptions %}
-<form method="post">
-{#    Wraps each form item in a p tag. Or you can loop over every field in the form. Or add errors. #}
-    {% csrf_token  %}
-    {{ form.username }}<br>
-    {{ form.password }}<br>
-    {{ form.email }}<br>
+    <div id="signup" class="formStyle"></div>
+    <form method="post">
+        {#    Wraps each form item in a p tag. Or you can loop over every field in the form. Or add errors. #}
+        {% csrf_token  %}
+        Username: {{ form.username }}<br>
+        Password: {{ form.password }}<br>
+        Email: {{ form.email }}<br>
 
-    <input type="submit" value="Sign up" />
+        <input type="submit" class="submit" value="Sign Up" />
 
-</form>
-
+    </form>
+    </div>
 {% endblock %}

@@ -9,15 +9,38 @@
   margin-bottom: 100px;
 }
 
+.submit {
+    color: #411e0f;
+    border-radius: 3px;
+    background-color: #fbf9d6;
+    margin-top: 15px;
+    float: right;
+    margin-right: 10px;
+
+}
+
+#id_username, #id_password {
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    align: right;
+}
+
+
+body {
+  font-family: 'Junge', serif;
+}
+
 .topshelf {
     font-family: 'Dosis', sans-serif;
     font-weight: 500;
     color: #9e0a3a;
 }
 
-#cell {
-    display:table-cell;
+.body_text {
+    display:inline;
     vertical-align:middle;
+
 }
 .catchPhrase {
     color: #411e0f;
@@ -28,7 +51,7 @@
     height: 60%;
     background-image: url('../images/fabric_plaid_@2X.png');
     position: fixed;
-    margin-top: 10%;
+    margin-top: 7%;
     margin-left: 70%;
     border-radius: 8px;
     box-shadow: 6px;
@@ -36,7 +59,7 @@
     padding: 20px;
     box-shadow:0px 0px 4px 8px #EBEBEB;
     text-align: center;
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
   /* Wrapper for page content to push down footer */

@@ -1,32 +1,15 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 {% load staticfiles %}
 
-{% block main %}
-    <div id="login_content">
+{% block indexOptions %}
+    <div id="login" class="formStyle">
         <form method="post">
             {% csrf_token  %}
-            {{ form.username }}<br>
-            {{ form.password }}
-            <input type="submit" value="Sign in" />
+            Username: {{ form.username }}<br>
+            Password: {{ form.password }}
+            <input type="submit" class="submit" value="Sign In" />
 
         </form>
     </div>
 
 {% endblock %}
-{##}
-{##}
-{#{% extends "index.html" %}#}
-{#{% load staticfiles %}#}
-{##}
-{#{% block indexOptions %}#}
-{#    <div id="login_content">#}
-{#        <form method="post">#}
-{#            {% csrf_token  %}#}
-{#            {{ form.username }}<br>#}
-{#            {{ form.password }}#}
-{#            <input type="submit" value="Sign in" />#}
-{##}
-{#        </form>#}
-{#    </div>#}
-{##}
-{#{% endblock %}#}

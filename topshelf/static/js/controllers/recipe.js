@@ -1,6 +1,6 @@
 // Add a search results filter and search redo. 
 
-function RecipeCtrl($scope, $http, $routeParams, Data) {
+function RecipeCtrl($scope, $http, $routeParams, $location, Data) {
     $scope.recipe = undefined;
 
     queryParams = Data;
