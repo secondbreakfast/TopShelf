@@ -6,7 +6,7 @@ function RecipeCtrl($scope, $http, $routeParams, $location, Data) {
     var id = $routeParams.id;
     console.log(id);
 
-    $scope.feedLimit = 10;
+    $scope.feedLimit = 5;
 
     $http.get('/api/v1/pantry/?format=json').
         success(function(user_pantry_list){
