@@ -3,7 +3,7 @@
         <h3>Pick three ingredients to use up:</h3>
         <em><h5>Results will only display recipes that have all three ingredients.</h5></em><br>
         <h4>What can I make with:
-        <select ng-model="queryParams.first" ng-options="item.ing_master.ing_test for item in pantry_data"></select> &
+        <select ng-model="queryParams.first" ng-options="item.ing_master.ing_test for item in pantry_data" ></select> &
         <select ng-model="queryParams.second" ng-options="item.ing_master.ing_test for item in pantry_data"></select> &
         <select ng-model="queryParams.third" ng-options="item.ing_master.ing_test for item in pantry_data"></select> ? </h4>
         <!-- Add other values. Diet, items to exclude. -->
@@ -11,14 +11,15 @@
     </form></div>
     <div id="columnContainer">
         <div id="pantryForm"><form ng-submit="submitForm()" >
-            <h4>Stock Your Pantry</h4>
+            <h3>Stock Up</h3>
+            <em><h5>Update your pantry</h5></em>
             <div>
                 Add an ingredient: <input type="text" ng-model="pantry.ing_master" typeahead="item.resource_uri as item.ing_test for item in list_items | filter:$viewValue | limitTo:30" class="form-control">
             </div>
             <br>
             <input type="submit" value="Add Ingredient" ng-click="loadData()">
         </form></div>
-        <h3>Your Pantry</h3>
+        <h3 id="pantryTitle">Your Pantry</h3>
         <div class="userPantryList" ng-repeat="item in pantry_data">
             <div class="foodButtons" ng-click="deleteItem(item)">{{ item.ing_master.ing_test }}</div>
         </div>

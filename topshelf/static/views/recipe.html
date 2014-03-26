@@ -1,36 +1,23 @@
 <div class='container-fluid'>
-  <!--  <div class="recipeSearchForm"><form ng-submit="recipeSearchForm(queryParams, id)" >
-        <h4>What can I make with:
-            <select ng-model="queryParams.first" ng-options="item.ing_master.ing_test for item in pantry_list"></select> &
-            <select ng-model="queryParams.second" ng-options="item.ing_master.ing_test for item in pantry_list"></select> &
-            <select ng-model="queryParams.third" ng-options="item.ing_master.ing_test for item in pantry_list"></select> ? </h4>
-            <input type="submit" ng-click="loadData()" value="Redo search">
-    </form></div> -->
+    <!--  <div class="recipeSearchForm"><form ng-submit="recipeSearchForm(queryParams, id)" >
+          <h4>What can I make with:
+              <select ng-model="queryParams.first" ng-options="item.ing_master.ing_test for item in pantry_list"></select> &
+              <select ng-model="queryParams.second" ng-options="item.ing_master.ing_test for item in pantry_list"></select> &
+              <select ng-model="queryParams.third" ng-options="item.ing_master.ing_test for item in pantry_list"></select> ? </h4>
+              <input type="submit" ng-click="loadData()" value="Redo search">
+      </form></div> -->
     <div id="results">
-       <div class="match_header"></div>
-        <accordion class="recipe_match" ng-repeat="item in food | limitTo:feedLimit" ui-if="!!item.length">
-            <accordion-group>
-                <accordion-heading>
-                    <div>
-                        <div class="match_images">
-                            <img class="match_pic" src="{{ item.smallImageUrls.0 }}"/>
-                        </div>
-                        <div class="match_list">
-                            <h4>{{ item.recipeName }}</h4>
-                            <p>From: {{ item.sourceDisplayName }}</p>
-                            <p>Rating: {{ item.rating }}/5</p>
-                            <p>Cook time: {{ item.totalTimeInSeconds/60 }} min</p>
-                            <a href="http://www.yummly.com/recipes?q={{ item.recipeName }}">Find it at Yummly</a>
-                        </div>
-                    </div>
-                </accordion-heading>
-                <accordion-group>
-                    hi
-                    <p>{{ deets.recipe_data.name }}</p>
-                    <p>{{ deets.recipe_data.yield }}</p>
-                </accordion-group>
-            </accordion-group>
-        </accordion>
-     <button ng-click="feedLimit = feedLimit + 5">I'm still hungry...show me more results!</button>
+        <div class="match_header"></div>
+        <div class="recipe_match" ng-repeat="item in food | limitTo:feedLimit" ui-if="!!item.length">
+            <div class="match_images">
+                <h2 class="image_logo">{{ item.recipeName }}</h2>
+            </div>
+            <div class="match_list">
+                <p>From: {{ item.sourceDisplayName }}. </p>
+                <p>Rating: {{ item.rating }}/5, Cook time: {{ item.totalTimeInSeconds/60 }} min</p>
+                <a href="http://www.yummly.com/recipes?q={{ item.id }}">Find it at Yummly</a>
+            </div>
+        </div>
+                    <button ng-click="feedLimit = feedLimit + 5">I'm still hungry...show me more results!</button>
     </div>
 </div>

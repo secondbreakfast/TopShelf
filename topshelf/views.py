@@ -67,7 +67,7 @@ def recipe(request, user_id):
     # ingred = ["kale", "lemon juice", "tomatoes", "garlic cloves", "butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
 
     # API call pulls 500 recipes to filter through. This number will change as the data gets normalized, and more efficient.
-    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&maxResult=500{0}'.format(api_params))
+    recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&maxResult=300{0}'.format(api_params))
     recipes = recipes.json()
 
     # This section compares the text in the user's ingredients record with each recipe's set of ingredients.

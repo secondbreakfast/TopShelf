@@ -4,14 +4,6 @@ body {
     font-family: 'Junge', serif;
 }
 
-.topshelf {
-    font-family: 'Dosis', sans-serif;
-    font-weight: 500;
-    color: #9e0a3a;
-    display: inline-block;
-}
-
-
 #header {
     position: absolute;
     max-height: 80px;
@@ -22,10 +14,32 @@ body {
 
 }
 
+
+.topshelf {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 500;
+    color: #9e0a3a;
+    display: inline-block;
+}
+
 #headerContent {
     margin: 10px;
     display: inline-block;
 
+}
+
+#login_logout {
+    display: inline-block;
+}
+
+input, select {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.match_pic {
+    min-width: 200px;
+    max-height: 200px;
 }
 
 .recipeSearchForm {
@@ -33,6 +47,11 @@ body {
     display: block;
     margin-top: 20px;
 
+}
+
+.image_logo {
+    color: #9e0a3a;
+    text-shadow: 5px 5px 0px #ebebeb, 7px 7px 0px #9e0a3a;
 }
 
 .match_header{
@@ -47,6 +66,18 @@ body {
 /*.recipe_match {*/
     /*margin-top: 150px;*/
 /*}*/
+
+
+
+.submit {
+    color: #411e0f;
+    border-radius: 5px;
+    background-color: #fbf9d6;
+    margin-top: 15px;
+    margin-right: 10px;
+
+}
+
 #pantryForm {
     float:left;
     width:30%;
@@ -54,13 +85,15 @@ body {
     height: 100%;
     padding-bottom: 300px;
     padding-left: 30px;
+}
 
+#pantryTitle {
+    text-align: center;
 }
 
 .userPantryList {
     float:left;
     max-width: 65%;
-    overflow:hidden;
     display: table;
     text-align: center;
 }
@@ -72,23 +105,35 @@ body {
     display: table-cell;
     padding: 10px;
     text-transform: capitalize;
+    border-radius: 2px;
+
 }
 
-#login_logout {
-    display: inline-block;
+.foodButtons:hover{
+    text-decoration: line-through;
+    color: #9e0a3a;
 }
 
-h4 {
-    text-align: center;
-}
-.submit {
+#footer {
+    background-image: url('../images/fabric_plaid_@2X.png');
     color: #411e0f;
-    border-radius: 5px;
-    background-color: #fbf9d6;
-    margin-top: 15px;
-    margin-right: 10px;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    position: fixed;
+  }
 
-}
+  /* Lastly, apply responsive CSS fixes as necessary */
+  @media (max-width: 767px) {
+    #footer {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
 
 
 
