@@ -75,16 +75,17 @@ def recipe(request, user_id):
     # Right now, this just uses a library (DiffLib) to compare text and assigns a similarity ratio. Not great, but ok.
     ingred.sort()
     match = []
+    greatest_ratio = 0
     for item in recipes['matches']:
         match_ratio = difflib.SequenceMatcher(None, ingred, item['ingredients'], autojunk=True).ratio()
-        greatest_ratio = 0
         if match_ratio > .04:
-            if match_ratio > greatest_ratio:
+            if match_ratio >= greatest_ratio:
                 greatest_ratio = match_ratio
                 item['ratio']= match_ratio
                 match.insert(0, item)
             else:
-                match.insert(-1, item)
+                match.append(item)
+
     return HttpResponse(json.dumps(match),content_type='application/json')
 
 # Searches for individual recipe detail. This only fires when a user clicks on a recipe record at recipe.html

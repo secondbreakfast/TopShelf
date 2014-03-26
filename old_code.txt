@@ -1,17 +1,8 @@
-<div class='container-fluid'>
-  <!--  <div class="recipeSearchForm"><form ng-submit="recipeSearchForm(queryParams, id)" >
-        <h4>What can I make with:
-            <select ng-model="queryParams.first" ng-options="item.ing_master.ing_test for item in pantry_list"></select> &
-            <select ng-model="queryParams.second" ng-options="item.ing_master.ing_test for item in pantry_list"></select> &
-            <select ng-model="queryParams.third" ng-options="item.ing_master.ing_test for item in pantry_list"></select> ? </h4>
-            <input type="submit" ng-click="loadData()" value="Redo search">
-    </form></div> -->
-    <div id="results">
-       <div class="match_header"></div>
+<div id="results">
         <accordion class="recipe_match" ng-repeat="item in food | limitTo:feedLimit" ui-if="!!item.length">
             <accordion-group>
                 <accordion-heading>
-                    <div>
+                    <div ng-click='loadDeets(item)'>
                         <div class="match_images">
                             <img class="match_pic" src="{{ item.smallImageUrls.0 }}"/>
                         </div>

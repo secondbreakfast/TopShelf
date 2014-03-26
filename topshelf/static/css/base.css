@@ -18,6 +18,7 @@ body {
     width: 100%;
     background-color: #7f9F81;
     top: 0px;
+    display: block
 
 }
 
@@ -27,24 +28,69 @@ body {
 
 }
 
+.recipeSearchForm {
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+
+}
+
+.match_header{
+    height: 100px;
+}
+
+.match_list {
+    display: block;
+    margin-top: 20px;
+}
+
+/*.recipe_match {*/
+    /*margin-top: 150px;*/
+/*}*/
+#pantryForm {
+    float:left;
+    width:30%;
+    text-align: center;
+    height: 100%;
+    padding-bottom: 300px;
+    padding-left: 30px;
+
+}
+
+.userPantryList {
+    float:left;
+    max-width: 65%;
+    overflow:hidden;
+    display: table;
+    text-align: center;
+}
+
+.foodButtons {
+    /*float: right;*/
+    width: auto;
+    margin-right: 100px;
+    display: table-cell;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
 #login_logout {
     display: inline-block;
 }
 
-#pantryForm {
-    float:left;
-    width:30%;
-    overflow:hidden;
+h4 {
     text-align: center;
 }
+.submit {
+    color: #411e0f;
+    border-radius: 5px;
+    background-color: #fbf9d6;
+    margin-top: 15px;
+    margin-right: 10px;
 
-
-#userPantryList {
-    float:right;
-    width:65%;
-    overflow:hidden;
 }
 
-#recipeSearchForm {
-    text-align: center;
-}
+
+
+
+
