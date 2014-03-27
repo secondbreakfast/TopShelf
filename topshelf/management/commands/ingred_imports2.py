@@ -8,8 +8,7 @@ from django.http import request
 from django.core.management.base import BaseCommand
 from topshelf.models import IngredMaster_test
 
-#Special management command to do an initial data import from the Yummly API, to create a master list of ingredients.
-# Users will be able to build their own ingredient lists using these values.
+#Second ingredient import. This one had clean data (after I scraped and formatted it) but not as many ingredients. This one has about 1k compared to 15k. It is still a good starting point for a search and may be useful in creating dictionaries for the ingredients list. The best way to normalize the data might be to use these as a generic key for all values stored in the larger ingredients list.
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
@@ -22,5 +21,6 @@ class Command(BaseCommand):
         for a in food_data.find_all('a'):
             ingredients.append(a.encode_contents())
 
+        # Pushes data to data table.
         for item in ingredients:
             IngredMaster_test.objects.create(ing_test = item)

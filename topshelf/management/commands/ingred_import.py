@@ -5,8 +5,11 @@ from django.http import request
 from django.core.management.base import BaseCommand
 from topshelf.models import IngredMaster
 
+# This is the original import command I used to build my ingredient list. It pulled over 15k ingredients. Data was inconsistent and redundant, so I had to shelve this one for a different dataset.
+# This data will be used to improve search results because it reflects exactly how data is entered into the Yummly recipe API.
+# Once this data is normalized, it should be very powerful for searching through results.
+
 #Special management command to do an initial data import from the Yummly API, to create a master list of ingredients.
-# Users will be able to build their own ingredient lists using these values.
 
 class Command(BaseCommand):
     def handle(self, *args, **options):

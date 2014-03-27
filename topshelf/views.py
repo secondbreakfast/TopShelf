@@ -11,32 +11,35 @@ from django.shortcuts import render, redirect
 from topshelf.forms import SignupForm, LoginForm
 from topshelf.models import UserIngred, IngredMaster
 
+# Launches index page.
 def index(request):
     return render(request, "index.html")
 
+# Launches angular pages.
 def angular(request):
     return render(request, 'base.html')
 
+# To be added later.
+# def about(request):
+#     return render(request, "about.html")
 
-def about(request):
-    return render(request, "about.html")
-
+# Simple signup form, authenticates user.
 def signup(request):
     if request.method =="POST":
         form = SignupForm(request.POST)
         if form.is_valid():
-             user = User.objects.create_user(
-             form.cleaned_data["username"],
-             form.cleaned_data["email"],
-             form.cleaned_data["password"],
-            )
+            user = User.objects.create_user(
+                form.cleaned_data["username"],
+                form.cleaned_data["email"],
+                form.cleaned_data["password"],
+                )
     else:
         form = SignupForm()
     data = {'form': form}
     return render(request, "signup.html", data)
 
 
-#Initialized login page, authenticates, and redirects to pantry.
+#Initializes login page, authenticates, and redirects to user pantry.
 def login_page(request):
     if request.method =="POST":
         form = LoginForm(request.POST)
@@ -66,13 +69,13 @@ def recipe(request, user_id):
     # Sample output for user ingredients list below.
     # ingred = ["kale", "lemon juice", "tomatoes", "garlic cloves", "butter", "vegetable oil", "flat leaf parsley", "capers", "mushrooms"]
 
-    # API call pulls 500 recipes to filter through. This number will change as the data gets normalized, and more efficient.
+    # Request pulls 300 recipes to filter through. This number will change as the data gets normalized, and more efficient.
     recipes = requests.get('http://api.yummly.com/v1/api/recipes?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83&maxResult=300{0}'.format(api_params))
     recipes = recipes.json()
 
     # This section compares the text in the user's ingredients record with each recipe's set of ingredients.
     # It's not great, but is a quick way to get some results. This will change substantially as the data gets normalized.
-    # Right now, this just uses a library (DiffLib) to compare text and assigns a similarity ratio. Not great, but ok.
+    # Right now, this just uses a library (DiffLib) to compare text and assigns a similarity ratio. Not great, but ok for now.
     ingred.sort()
     match = []
     greatest_ratio = 0
@@ -88,11 +91,11 @@ def recipe(request, user_id):
 
     return HttpResponse(json.dumps(match),content_type='application/json')
 
-# Searches for individual recipe detail. This only fires when a user clicks on a recipe record at recipe.html
-def recipe_detail(request, user_id):
-    recipe_id = request.GET.get('recipe_id')
-    resp = requests.get("http://api.yummly.com/v1/api/recipe/{0}?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83".format(recipe_id))
-    recipe_data = resp.json()
-    data = {"recipe_data":recipe_data}
-
-    return HttpResponse(json.dumps(data),content_type='application/json')
+# Searches for individual recipe detail. This will be run in the next iteration of the project.
+# def recipe_detail(request, user_id):
+#     recipe_id = request.GET.get('recipe_id')
+#     resp = requests.get("http://api.yummly.com/v1/api/recipe/{0}?_app_id=935e1518&_app_key=b1f4ba0e9b7eb98208ed4a0d44d7cc83".format(recipe_id))
+#     recipe_data = resp.json()
+#     data = {"recipe_data":recipe_data}
+#
+#     return HttpResponse(json.dumps(data),content_type='application/json')

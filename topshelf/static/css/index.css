@@ -6,14 +6,31 @@
 }
 
 #jumbotron {
-  background-size: cover;
-  background-image: url('../images/foodbackground_home.jpg');
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  margin-bottom: 100px;
+    background-size: cover;
+    background-image: url('../images/foodbackground_home.jpg');
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 100px;
+}
+
+body {
+    font-family: 'Fanwood Text', serif;
+}
+
+a {
+    color: #9e0a3a;
+}
+
+.body_text {
+    display:inline;
+    vertical-align:middle;
+
+}
+.catchPhrase {
+    color: #411e0f;
 }
 
 .submit {
@@ -34,24 +51,6 @@
     font-size: 20px;
 }
 
-
-body {
-    font-family: 'Fanwood Text', serif;
-}
-
-a {
-   color: #9e0a3a;
-}
-
-.body_text {
-    display:inline;
-    vertical-align:middle;
-
-}
-.catchPhrase {
-    color: #411e0f;
-}
-
 #button-container {
     max-width: 300px;
     height: 60%;
@@ -68,19 +67,13 @@ a {
     padding-top: 40px;
 }
 
-  /* Wrapper for page content to push down footer */
-  #wrap {
+/* Wrapper for page content to push down footer */
+#wrap {
     min-height: 100%;
     height: auto;
-    /* Negative indent footer by it's height */
+    /* Negative indent footer by its height */
     margin: 0 auto -60px;
-  }
-
-  /* Set the fixed height of the footer here */
-  /*#push,*/
-  /*#footer {*/
-    /*height: 60px;*/
-  /*}*/
+}
 
 #footer {
     background-image: url('../images/fabric_plaid_@2X.png');
@@ -90,14 +83,15 @@ a {
     position: fixed;
     bottom: 0px;
     text-align: center;
-  }
+    padding-bottom: 12px;
+}
 
-  /* Lastly, apply responsive CSS fixes as necessary */
-  @media (max-width: 767px) {
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
     #footer {
-      margin-left: -20px;
-      margin-right: -20px;
-      padding-left: 20px;
-      padding-right: 20px;
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
-  }
+}

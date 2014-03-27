@@ -4,43 +4,40 @@
 <html>
 
 <head>
+
     <title>{% block title %}TopShelf{% endblock %}</title>
 
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+   <!-- <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"> -->
     <link href="http://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Fanwood+Text' rel='stylesheet' type='text/css'>
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
     <link href="{% static 'css/index.css' %}" rel="stylesheet">
 
     <script type="text/javascript"  src="{% static 'js/vendor/jquery-1.11.0.min.js' %}"></script>
-    <script type="text/javascript"  src="{% static 'js/index_jquery.js' %}"></script>
-
 
 </head>
 
 <body>
 <div id="jumbotron">
     <div class="container home_buttons" id="button-container">
-            <div class="body_text">
-                <div class="topshelf">TopShelf</div>
-                <em><h3 class="catchPhrase">Reclaim Your Kitchen</h3></em><br>
-            </div>
-            <div class="body_text">
-                {% block indexOptions %}
-                    <a href="{% url 'auth_login' %}"><h2>{% trans "Log in" %}</h2></a><br>
-                    <a href="{% url 'signup' %}"><h2>{% trans "Signup" %}</h2></a>
-            <hr />
-             <!--       <a href="#" class="btn btn-default btn-lg" id="home-button3">About</a><br> -->
-                {% endblock %}
-            </div>
+        <div class="body_text">
+            <div class="topshelf">TopShelf</div>
+            <em><h3 class="catchPhrase">Reclaim Your Kitchen</h3></em><br>
+        </div>
+        <div class="body_text">
+            {% block indexOptions %}
+                <a href="{% url 'auth_login' %}"><h1>{% trans "Log in" %}</h1></a><br>
+                <a href="{% url 'signup' %}"><h1>{% trans "Signup" %}</h1></a>
+             {% endblock %}
+        </div>
     </div>
 </div>
-<!-- FOOTER -->
+
 <footer>
     <div id="footer">
         <div class="container">
             <h3>Say hi to us at <a href="">nom@topshelf.com</a></h3>
-            {#        <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>#}
+           <!--        <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p> -->
         </div>
     </div>
 </footer>

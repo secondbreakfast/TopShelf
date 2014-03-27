@@ -11,7 +11,7 @@ app.factory("Data", function(){
   };
 });
 
-//Sets up routes for recipe and pantry detail views, which are the main pages that users will go to.
+//This sets up routes for recipe and pantry views, which are the main pages that users will go to.
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider.
         when('/:id/pantry/', {templateUrl: '/static/views/pantry.html', controller: PantryCtrl}).
