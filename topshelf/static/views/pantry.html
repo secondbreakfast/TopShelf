@@ -9,7 +9,7 @@
     <div id="columnContainer">
         <div id="pantryForm"><form ng-submit="submitForm()">
             <h2 class="title">Stock Up Your Pantry</h2>
-                <input type="text" ng-model="pantry.ing_master" typeahead="item.resource_uri as item.ing_test for item in list_items | filter:$viewValue | limitTo:30" class="form-control">
+           <input type="text" ng-model="pantry.ing_master" typeahead="item.resource_uri as item.ing_test for item in list_items | filter:$viewValue | limitTo:30" class="form-control" value="">
             <br>
             <input type="submit" value="Add Ingredient" ng-click="loadData()" class="submit">
         </form></div>
